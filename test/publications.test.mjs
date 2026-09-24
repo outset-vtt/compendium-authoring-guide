@@ -65,7 +65,7 @@ test('ambiguous and raw source snapshots fail', () => {
   assert.throws(() => validateCorpus(files, changed), /Duplicate snapshot entry/);
 });
 test('valid Markdown is not proof of semantic fidelity', () => {
-  assert.equal(validateCorpus(change(item, '**3 glowstones**', '**300 glowstones**'), packs).status, 'passed');
+  assert.equal(validateCorpus(change(item, '**3 charges**', '**300 charges**'), packs).status, 'passed');
 });
 test('reader rejects symlinks and non-edition files', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'outset-publications-test-'));

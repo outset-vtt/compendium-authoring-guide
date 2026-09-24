@@ -1,4 +1,4 @@
-# Validation and troubleshooting
+# Validate against your SRD base
 
 ```sh
 npm run validate -- path/to/editions --snapshot path/to/compiled-packs.json
@@ -26,4 +26,6 @@ Snapshot hashes are treated as authoritative input, not recomputed from arbitrar
 
 `npm test` includes the valid corpus and intentionally broken variants: stale source, missing references, duplicate IDs, prohibited markup, wrong book membership, and malformed source snapshots. `npm run check:links` checks repository-relative Markdown links. CI runs all three checks.
 
-The original bundle and compiled snapshot were checked against Outset's rules compiler during initial preparation. That compiler is not bundled here. The portable checks do not reproduce full rules compilation, verify live MCP operations, or exercise application rendering. Read the [source review](../examples/lantern-marsh/review.md) for semantic evidence.
+The original homebrew pack was composed with Outset's SRD 5.2.1 base and checked with its rules compiler before saving the homebrew-only snapshot. That compiler is not bundled here. The portable checks do not reproduce full rules compilation, verify live MCP operations, or exercise application rendering. Read the [source review](../examples/lantern-marsh/review.md) for semantic evidence.
+
+For source imports, run `npm run prepare:example -- <full-srd-source.json> <new-output.json>` only with your actual full SRD source. The helper checks base identity, edition, input shape, and pack collisions; Outset still performs authoritative mechanical validation. The reading validator cannot substitute for that step.

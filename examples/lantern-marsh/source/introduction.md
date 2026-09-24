@@ -1,5 +1,5 @@
 # Lantern Marsh
 
-Travelers mark safe paths with light. A dry camp restores spent lantern glowstones after a night of rest. Read the entry for each creature, item, or spell before using it: similar descriptions do not make their limits interchangeable.
+These homebrew field notes add a Reed Warden, a Signal Lantern, and Marshlight to an SRD 5.2.1 base. Travelers mark safe paths with light. Read each entry before using it: the warden's Long Rest limit and the lantern's dawn recharge are separate rules.
 
-These field notes contain a Reed Warden, a Signal Lantern, and Marshlight. The rules are original teaching examples. Special abilities are described in prose; this example does not automate them.
+The entries are original examples. Their special abilities, charges, attacks, and spell effects are described in prose and resolved manually. They do not define a new game system or implement automated actions.
