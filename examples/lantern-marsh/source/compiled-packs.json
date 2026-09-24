@@ -1,0 +1,65 @@
+[
+  {
+    "id": "lantern-marsh-core",
+    "name": "Lantern Marsh Field Notes",
+    "systemId": "lantern-marsh",
+    "entries": [
+      {
+        "id": "reed-warden",
+        "type": "monster",
+        "name": "Reed Warden",
+        "source": "Lantern Marsh, first edition",
+        "data": {
+          "description": "A Reed Warden guards raised paths through the marsh. It has 4 Resolve. Once per watch, it can light a safe path for 2 minutes. It cannot use this signal while submerged. It carries one Signal Lantern.",
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "structured": {
+          "kind": "monster"
+        },
+        "sourceData": {
+          "description": "A Reed Warden guards raised paths through the marsh. It has 4 Resolve. Once per watch, it can light a safe path for 2 minutes. It cannot use this signal while submerged. It carries one Signal Lantern.",
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "contentHash": "entry-a50ef29b7e57b729"
+      },
+      {
+        "id": "signal-lantern",
+        "type": "item",
+        "name": "Signal Lantern",
+        "source": "Lantern Marsh, first edition",
+        "data": {
+          "description": "A Signal Lantern holds 3 glowstones. Spend 1 glowstone to send a Marshlight signal for 2 minutes. After a night at a dry camp, refill the lantern to 3 glowstones. A shutter changes the signal color without spending a glowstone. A broken lantern cannot send signals. Amber requests a meeting; blue marks a safe route.",
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "sourceData": {
+          "description": "A Signal Lantern holds 3 glowstones. Spend 1 glowstone to send a Marshlight signal for 2 minutes. After a night at a dry camp, refill the lantern to 3 glowstones. A shutter changes the signal color without spending a glowstone. A broken lantern cannot send signals. Amber requests a meeting; blue marks a safe route.",
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "contentHash": "entry-4326a14dcf0aaa5c"
+      },
+      {
+        "id": "marshlight",
+        "type": "spell",
+        "name": "Marshlight",
+        "source": "Lantern Marsh, first edition",
+        "data": {
+          "description": "Marshlight is a level 1 spell. Choose one visible post within 30 feet. It shines blue for 2 minutes, marking a safe route. The light ends early if the post is submerged. It deals no damage.",
+          "level": 1,
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "structured": {
+          "kind": "spell",
+          "level": 1
+        },
+        "sourceData": {
+          "description": "Marshlight is a level 1 spell. Choose one visible post within 30 feet. It shines blue for 2 minutes, marking a safe route. The light ends early if the post is submerged. It deals no damage.",
+          "level": 1,
+          "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        },
+        "contentHash": "entry-46933decd9b21b54"
+      }
+    ],
+    "contentHash": "pack-10a29065cdc9be4d",
+    "immutable": true
+  }
+]
