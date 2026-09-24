@@ -9,8 +9,149 @@
       "name": "Reed Warden",
       "source": "Lantern Marsh, first edition",
       "data": {
-        "description": "A Reed Warden is a Medium Humanoid that guards raised paths through the marsh. Armor Class 12; Hit Points 9; Speed 30 feet. Strength 10, Dexterity 14, Constitution 10, Intelligence 10, Wisdom 12, Charisma 10. Staff: Melee Attack Roll +2, reach 5 feet, one target; Hit: 3 (1d6) Bludgeoning damage. Once per Long Rest, the warden can use an action to light a safe path for 2 minutes. It cannot use this signal while submerged. It carries one Signal Lantern.",
-        "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+        "description": "A Reed Warden is a Medium Humanoid, Neutral, that guards raised paths through the marsh. Armor Class 12; Hit Points 9; Speed 30 feet. Challenge 1/8 (25 XP); Proficiency Bonus +2. Strength 10, Dexterity 14, Constitution 10, Intelligence 10, Wisdom 12, Charisma 10. Staff: Melee Attack Roll +2, reach 5 feet, one target; Hit: 3 (1d6) Bludgeoning damage. Once per Long Rest, the warden can use an action to light a safe path for 2 minutes. It cannot use this signal while submerged. It carries one Signal Lantern.",
+        "attribution": "Original Outset VTT example content, MIT license. No third-party rules text.",
+        "size": "medium",
+        "creatureType": "Humanoid",
+        "alignment": "Neutral",
+        "ac": 12,
+        "hp": {
+          "average": 9,
+          "formula": "2d8"
+        },
+        "speed": "30 ft.",
+        "challenge": "1/8 (XP 25; PB +2)",
+        "proficiency": 2,
+        "abilities": {
+          "strength": 10,
+          "dexterity": 14,
+          "constitution": 10,
+          "intelligence": 10,
+          "wisdom": 12,
+          "charisma": 10
+        },
+        "saves": {
+          "strength": 0,
+          "dexterity": 2,
+          "constitution": 0,
+          "intelligence": 0,
+          "wisdom": 1,
+          "charisma": 0
+        },
+        "skills": {},
+        "savingThrowProficiencyRanks": {},
+        "savingThrowBonuses": {},
+        "skillProficiencyRanks": {},
+        "skillBonuses": {},
+        "sheetAbilities": [
+          {
+            "id": "reed-warden-staff",
+            "name": "Staff",
+            "category": "feature",
+            "timing": "action",
+            "description": "Melee Attack Roll +2, reach 5 feet, one target; Hit: 3 (1d6) Bludgeoning damage. Roll damage only after confirming a hit.",
+            "actions": [
+              {
+                "id": "staff-attack",
+                "label": "Staff Attack",
+                "kind": "attack",
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "staff-attack",
+                  "label": "Staff Attack",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "creature",
+                    "minTargets": 1,
+                    "maxTargets": 1,
+                    "range": 5
+                  },
+                  "rolls": [
+                    {
+                      "id": "attack",
+                      "kind": "attack",
+                      "label": "Staff Attack",
+                      "expression": "1d20 + {strengthMod} + {proficiency}",
+                      "abilityScoreId": "strength",
+                      "tags": [
+                        "weapon",
+                        "attack",
+                        "melee-weapon-attack"
+                      ]
+                    }
+                  ],
+                  "outcomes": [],
+                  "effects": [],
+                  "semantics": {
+                    "tags": [
+                      "weapon",
+                      "attack",
+                      "melee-weapon-attack"
+                    ]
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              },
+              {
+                "id": "staff-damage",
+                "label": "Staff Damage",
+                "kind": "damage",
+                "followUp": true,
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "staff-damage",
+                  "label": "Staff Damage",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "creature",
+                    "minTargets": 1,
+                    "maxTargets": 1,
+                    "range": 5
+                  },
+                  "rolls": [
+                    {
+                      "id": "damage",
+                      "kind": "damage",
+                      "label": "Staff Damage",
+                      "expression": "1d6 + {strengthMod}",
+                      "abilityScoreId": "strength",
+                      "tags": [
+                        "weapon",
+                        "attack",
+                        "melee-weapon-attack"
+                      ],
+                      "damageType": "bludgeoning"
+                    }
+                  ],
+                  "outcomes": [],
+                  "effects": [],
+                  "semantics": {
+                    "tags": [
+                      "weapon",
+                      "attack",
+                      "melee-weapon-attack"
+                    ]
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "reed-warden-safe-path",
+            "name": "Safe-path signal (manual)",
+            "category": "feature",
+            "timing": "action",
+            "description": "Once per Long Rest, use an action to light a safe path for 2 minutes. Cannot be used while submerged. Track the use, duration, and light manually. Carries one Signal Lantern; its charges are separate.",
+            "actions": []
+          }
+        ]
       }
     },
     {

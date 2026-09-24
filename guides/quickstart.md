@@ -12,6 +12,8 @@ Open [the Lantern Marsh pack](../examples/lantern-marsh/source/pack.json) and fi
 
 The example pack uses `systemId: dnd-srd-5-2-1`. Its item has 3 charges, an action cost, and dawn recharge. Those are homebrew rules written using SRD conventions; this prose example does not create an automatic charge tracker.
 
+For a monster with structured stats and executable rolls, follow the [Reed Warden walkthrough](structured-monster.md).
+
 ## 3. Validate and save
 
 Use the editor's compiler diagnostics. Check the entry's description, type, and references. For automated behavior, also author and test the required typed item, resource, and action fields against the inherited SRD profiles. **Save version** when the draft is valid. Saving a personal version does not install it in a campaign.

@@ -23,7 +23,7 @@ The [example pack](examples/lantern-marsh/README.md) adds an original monster, m
 
 `source/pack.json` is a pack to add to your existing SRD-based project, not a complete system import. For a local import file, [the quickstart](guides/quickstart.md) shows how to combine it with your own full SRD source export while preserving the base.
 
-A readable monster or spell entry does not automatically implement its effects. These examples deliberately keep their actions and resources in prose; use Outset's typed editors and validation for automation.
+The [structured Reed Warden walkthrough](guides/structured-monster.md) shows SRD sheet import, HP, ability scores, and executable Staff attack and damage rolls. Its signal and the item/spell effects remain manual. Prose alone does not implement mechanics.
 
 ## Optional reading-edition tools
 

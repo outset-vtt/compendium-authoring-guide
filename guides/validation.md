@@ -24,7 +24,7 @@ Snapshot hashes are treated as authoritative input, not recomputed from arbitrar
 
 ## Maintainer checks
 
-`npm test` includes the valid corpus and intentionally broken variants: stale source, missing references, duplicate IDs, prohibited markup, wrong book membership, and malformed source snapshots. `npm run check:links` checks repository-relative Markdown links. CI runs all three checks.
+`npm test` includes the valid corpus and intentionally broken variants: stale source, missing references, duplicate IDs, prohibited markup, wrong book membership, and malformed source snapshots. Structured-monster tests also compare source stats with the reading table, check action timing and explicit manual boundaries, and ensure the compiled snapshot retains the authored data. They do not run the rules engine. `npm run check:links` checks repository-relative Markdown links. CI runs all three checks.
 
 The original homebrew pack was composed with Outset's SRD 5.2.1 base and checked with its rules compiler before saving the homebrew-only snapshot. That compiler is not bundled here. The portable checks do not reproduce full rules compilation, verify live MCP operations, or exercise application rendering. Read the [source review](../examples/lantern-marsh/review.md) for semantic evidence.
 
