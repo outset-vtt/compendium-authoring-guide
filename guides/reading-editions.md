@@ -1,6 +1,6 @@
 # Reading-edition format 0.0.1
 
-Reading editions are passive Markdown companions. Their historical wire identifiers remain unchanged.
+Reading editions are optional passive Markdown companions to your SRD-based compendium. Author and validate the SRD copy and homebrew pack first. Formatting does not replace the base system or implement mechanics. Historical wire identifiers remain unchanged.
 
 ## Entry documents
 
@@ -68,3 +68,7 @@ Document membership is explicit. Missing documents, repeated placement, duplicat
 ## Source admission
 
 The root entry hash and all declared source-pack hashes must match the supplied compiled packs. Outset can fall back to raw entry text when a reading edition is stale or unavailable. A corrected reading edition does not repair the underlying rules source. Preserve complete text; do not shorten the edition for hover cards.
+
+## Referencing the SRD base
+
+Copy SRD entry IDs and hashes from the exact compiled base you used. Supply both the homebrew and relevant SRD packs to the validator when linking across them. The example snapshot intentionally contains only Lantern Marsh; it does not stand in for the SRD catalog. Preserve source-pack bindings when an edition derives content from SRD data, along with the original attribution.

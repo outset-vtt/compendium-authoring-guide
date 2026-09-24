@@ -1,19 +1,21 @@
-# Lantern Marsh
+# Lantern Marsh: homebrew for the SRD
 
-An original teaching mini-compendium, using its own minimal system rather than a copied commercial ruleset.
+Add this original content pack to an Outset **D&D SRD 5.2.1** project. It inherits the base rather than defining a new system.
 
-| File | Role |
+| File | Purpose |
 | --- | --- |
-| [Source bundle](source/bundle.json) | Complete system with two actor profiles and three readable entries |
-| [Compiled packs](source/compiled-packs.json) | Frozen source identity and facts for reading validation |
-| [Introduction source](source/introduction.md) | Original witness for the reference chapter |
-| [Reed Warden](editions/monster-reed-warden.publication.md) | Monster facts, restrictions, and an item reference |
-| [Signal Lantern](editions/item-signal-lantern.publication.md) | Item limits, resource prose, and signal table |
-| [Marshlight](editions/spell-marshlight.publication.md) | Spell level, range, duration, and ending condition |
-| [Introduction](editions/introduction.publication.md) | Reference-only binding and grouped related spells |
-| [Book](editions/lantern-marsh.book.md) | Chapter and document order |
-| [Review](review.md) | Source fidelity evidence and validation boundaries |
+| [Source pack](source/pack.json) | Original monster, magic item, and spell; add to the SRD project's compendium packs |
+| [Compiled homebrew snapshot](source/compiled-packs.json) | Only this pack, compiled in SRD context for reading validation |
+| [Introduction source](source/introduction.md) | Original reference-chapter witness |
+| [Reed Warden](editions/monster-reed-warden.publication.md) | SRD-style creature facts and an item reference |
+| [Signal Lantern](editions/item-signal-lantern.publication.md) | Charges, action cost, dawn recharge, and signal table |
+| [Marshlight](editions/spell-marshlight.publication.md) | Spell metadata, effect, and ending condition |
+| [Introduction](editions/introduction.publication.md) | Pack binding and related spells |
+| [Book](editions/lantern-marsh.book.md) | Chapter order |
+| [Review](review.md) | Source-fidelity evidence and boundaries |
 
-The special abilities are deliberately prose-only. The system profiles define a Resolve attribute; the compendium monster is not wired to a sheet importer. Lantern charges and Marshlight do not execute automatically. This avoids presenting an example of readable content as a complete combat ruleset.
+The source pack is not a full-system import. Start from an Outset SRD copy and add this pack, or use the [quickstart helper](../../guides/quickstart.md) with your complete SRD source export. No SRD system definitions or third-party rules prose are included here.
 
-Run `npm run validate:examples` from the repository root. Adapt the source using your target authoring workspace and obtain fresh compiled packs before binding a different reading edition. All prose and source fixtures in this example are original Outset VTT content under the repository's MIT license.
+These entries demonstrate readable homebrew. Attacks, damage, charge spending and recovery, and spell effects remain prose-only until authored in the appropriate typed fields. No encounter-balance claim is made for the example creature. Retain the inherited SRD actor profiles and use authoritative editor diagnostics for automation.
+
+Run `npm run validate:examples` from the repository root. For links to SRD entries, include the corresponding compiled base packs as well. All original prose and fixtures here use the repository's MIT license; the underlying SRD retains its own notices.

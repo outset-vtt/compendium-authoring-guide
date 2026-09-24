@@ -1,0 +1,38 @@
+{
+  "id": "lantern-marsh-core",
+  "name": "Lantern Marsh Field Notes",
+  "systemId": "dnd-srd-5-2-1",
+  "entries": [
+    {
+      "id": "reed-warden",
+      "type": "monster",
+      "name": "Reed Warden",
+      "source": "Lantern Marsh, first edition",
+      "data": {
+        "description": "A Reed Warden is a Medium Humanoid that guards raised paths through the marsh. Armor Class 12; Hit Points 9; Speed 30 feet. Strength 10, Dexterity 14, Constitution 10, Intelligence 10, Wisdom 12, Charisma 10. Staff: Melee Attack Roll +2, reach 5 feet, one target; Hit: 3 (1d6) Bludgeoning damage. Once per Long Rest, the warden can use an action to light a safe path for 2 minutes. It cannot use this signal while submerged. It carries one Signal Lantern.",
+        "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+      }
+    },
+    {
+      "id": "signal-lantern",
+      "type": "item",
+      "name": "Signal Lantern",
+      "source": "Lantern Marsh, first edition",
+      "data": {
+        "description": "A Signal Lantern is a wondrous item with 3 charges. While holding it, you can take an action and expend 1 charge to send a Marshlight signal for 1 minute. The lantern regains all expended charges at dawn. A shutter changes the signal color without expending a charge. A broken lantern cannot send signals. Amber requests a meeting; blue marks a safe route.",
+        "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+      }
+    },
+    {
+      "id": "marshlight",
+      "type": "spell",
+      "name": "Marshlight",
+      "source": "Lantern Marsh, first edition",
+      "data": {
+        "description": "Marshlight is a level 1 Illusion spell. Casting Time: Action. Range: 30 feet. Components: V, S. Duration: 1 minute. Choose one visible post within range. It shines blue, marking a safe route for the duration. The light ends early if the post is submerged. It deals no damage.",
+        "level": 1,
+        "attribution": "Original Outset VTT example content, MIT license. No third-party rules text."
+      }
+    }
+  ]
+}

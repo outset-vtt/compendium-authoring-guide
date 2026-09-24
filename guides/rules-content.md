@@ -1,29 +1,31 @@
-# Rules content
+# Extend the SRD with your content
 
-Outset separates a system's structured rules, compendium entries, and optional reading editions. Source bundle JSON is the portable input shown here. Authoritative compilation occurs in Outset's authoring workspace; this repository does not distribute the rules compiler.
+The assumed base is Outset's **D&D SRD 5.2.1**, with canonical system ID `dnd-srd-5-2-1`. Begin with an actual published SRD source or the campaign's installed SRD context. Reuse its actor profiles, ability scores, hit points, armor class, speeds, conditions, resources, and action-v2 conventions.
 
-## The complete-system example
+## Preserve the base
 
-[Lantern Marsh's bundle](../examples/lantern-marsh/source/bundle.json) contains:
+For personal authoring, the project remains a complete `system-bundle` copied from the SRD. Keep its `system`, modules, built-in packs, and source metadata. Add your content in a separate pack rather than replacing the base or inventing a minimal substitute system. The project name and your pack name can be custom; the underlying system identity and edition stay SRD-owned.
 
-- `system`: a schema-v3 system with its ID, name, edition, and actor definitions.
-- `compendiumPacks`: packs with stable IDs, names, a system ID, and entries.
-- Each entry: `id`, `type`, `name`, `source`, and `data` containing original prose and attribution.
+For campaign authoring, use an `extension-bundle` created from the campaign's installed SRD. Preserve the editor's actual `baseSystem` ID, edition, revision, and release provenance. Do not manufacture a release ID or paste the personal full-system example into a campaign extension import.
 
-An entry is addressed by `packId:type:entryId`. Names are display labels, not identities. Different entry types may share a name; a spell called Shield must not be mistaken for an item called Shield.
+## Add a pack
 
-The example defines two simple actor profiles and readable monster, item, and spell entries. Those entries intentionally have no action pipelines or importer wiring. Their special abilities, lantern charges, and spell effects are handled manually. The `spell` type and `data.level` support categorization and reading references; they do not implement casting.
+[Lantern Marsh's `pack.json`](../examples/lantern-marsh/source/pack.json) contains `id`, `name`, `systemId`, and `entries`. Each entry has a stable `id`, a `type`, a display `name`, source information, and `data`.
 
-For automated behavior, use the target system's typed fields, valid actor profiles, resources, conditions, importers, and strict action-v2 pipelines. Inspect the editor's current schema and diagnostics rather than inventing fields or deriving executable behavior from prose. Validate edge cases such as conditional effects, empty resources, repeat saves, and spending charges without a damage roll.
+An entry is addressed by `packId:type:entryId`, for example `lantern-marsh-core:item:signal-lantern`. Names are not identities. New homebrew should use its own pack and entry IDs; preserve the IDs of content you have already released. Treat changes to an existing SRD entry as explicit overrides through the supported editor, not accidental collisions.
 
-## Match the authoring scope
+The example is an additive content pack. It does not define actor profiles or replace SRD rules. Its original monster has ordinary ability scores, AC, HP, Speed, and an attack; its magic item uses charges; its spell declares a level, school, casting time, range, components, and duration.
 
-Personal authoring accepts complete systems. Starting from an existing published system preserves its current schema and built-in rules; add your content in a separate pack. A private personal version is not a campaign-installable extension.
+## Distinguish prose from automation
 
-Campaign homebrew uses the campaign's supported extension workflow and canonical base-system identity and edition. Keep its source separate from a complete-system import. Internal release IDs are not publisher-owned edition numbers. Follow the current workspace's import and validation requirements.
+The example entries are intentionally readable source data. Their attack rolls, damage, charge spending, recovery, and spell effects are resolved manually. Setting `type: monster` or `type: spell` does not by itself wire a creature sheet or casting action.
 
-Do not paste a compiled pack snapshot into a source editor as though it were a full bundle. Do not flatten preserved source metadata, replace names with guessed IDs, or advertise reading documents as installable rules.
+Use the current typed compendium editors and inherited SRD actor profiles to implement supported mechanics. Copy field IDs from that base or authoring context, not labels guessed from a printed stat block. Use strict action-v2 pipelines and actual installed resources and conditions. Check action costs, targeting, zero-resource cases, recovery timing, and conditional effects in the editor's validation and test tools.
 
-## Source revisions
+Additional entries such as backgrounds and species should use the existing SRD-compatible typed forms. Selecting or installing a new option is separate from granting it to a character.
 
-Freeze source files for each reviewed edition. Compiled entry and pack hashes identify the exact retained rules data. They are not signatures or proof of ownership. When a source changes, obtain its new authoritative compiled snapshot, compare the affected content, and re-review the reading edition before rebinding it.
+## Link the intended source
+
+Link SRD references only to IDs observed in the selected compiled SRD packs. A trait called Darkvision is not automatically a reference to the spell. A reading edition may link both your homebrew and the base; supply the relevant compiled packs for validation. The small included snapshot contains only Lantern Marsh, so SRD links need an additional authoritative SRD snapshot.
+
+Keep the SRD edition, your homebrew version, and Outset's internal release identities separate. Source changes require new compilation and review; changing a reading hash does not update executable rules.

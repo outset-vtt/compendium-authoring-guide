@@ -1,33 +1,33 @@
-# Outset compendium authoring guide
+# Author SRD-based compendiums for Outset
 
-Create original compendium entries and readable reference books for Outset VTT. Start with a small, working example, then adapt it to your own rules and source material.
+Start with Outset's built-in **D&D SRD 5.2.1** and add your own content in a separate compendium pack. Keep the SRD's system identity, actor profiles, attributes, conditions, and action conventions. This guide assumes that base throughout.
 
-## Choose what to author
+## Start in Outset
 
-| Output | Purpose | Current delivery |
-| --- | --- | --- |
-| Rules source JSON | System definitions, compendium entries, and explicit mechanical data | Import and validate in the appropriate Outset authoring workspace |
-| Reading editions (`*.publication.md`) | Reviewed headings, tables, prose, and exact cross-references | Application-bundled reading content; no remote installation workflow supplied here |
-| Book outline (`*.book.md`) | Chapter order and document navigation | Travels with its reading editions |
+Open `/compendium`, choose **Create or edit compendiums**, and create a private copy of the published SRD. Outset retains the complete base and adds an empty personal pack. Author your monsters, items, spells, backgrounds, or species in that pack, validate the draft, and **Save version**.
 
-A reading edition does not grant abilities, create automated actions, or install rules. A valid entry with prose is also not proof that its mechanics are automated.
+For campaign homebrew, use the campaign Rules workspace and its extension workflow against the campaign's installed SRD. A private personal version and a campaign extension are different delivery paths; neither requires designing a replacement system.
 
-## Start here
+## Guides
 
-1. [Quickstart](guides/quickstart.md): run the validator and inspect a complete original example.
-2. [Rules content](guides/rules-content.md): source bundles, entry identity, and authoring scope.
-3. [Reading editions](guides/reading-editions.md): exact format, source bindings, sections, tables, and references.
-4. [Source fidelity](guides/source-fidelity.md): convert material without losing facts or changing rules.
-5. [Delivery](guides/delivery.md): drafts, private versions, campaign rules, and reading-edition boundaries.
-6. [Validation and troubleshooting](guides/validation.md): what checks establish and how to fix failures.
+1. [Quickstart](guides/quickstart.md): extend an SRD copy with your first homebrew pack.
+2. [Rules content](guides/rules-content.md): preserve the base, choose entry identities, and add supported mechanical data.
+3. [Reading editions](guides/reading-editions.md): optional reviewed Markdown, tables, and references.
+4. [Source fidelity](guides/source-fidelity.md): preserve rules and distinguish original homebrew from SRD-derived text.
+5. [Delivery](guides/delivery.md): private versions, campaign extensions, and reading editions.
+6. [Validation](guides/validation.md): compile in Outset and validate reading files locally.
 
-The [Lantern Marsh example](examples/lantern-marsh/README.md) includes a monster, item, spell, reference introduction, chapter outline, source bundle, compiled pack snapshot, and review record. All example prose is original and reusable under the [MIT license](LICENSE).
+## Example: Lantern Marsh
 
-For an agent-assisted workflow, use [Outset Creator's author-outset-compendium skill](https://github.com/outset-vtt/agent-plugins/tree/main/plugins/outset-creator/skills/author-outset-compendium).
+The [example pack](examples/lantern-marsh/README.md) adds an original monster, magic item, and spell to SRD 5.2.1. It contains no replacement system definitions or copied SRD rules text. It also demonstrates an optional reading edition and book outline.
 
-## Run the checks
+`source/pack.json` is a pack to add to your existing SRD-based project, not a complete system import. For a local import file, [the quickstart](guides/quickstart.md) shows how to combine it with your own full SRD source export while preserving the base.
 
-Requires Node.js 22 or newer and npm. The link check additionally uses Python 3.
+A readable monster or spell entry does not automatically implement its effects. These examples deliberately keep their actions and resources in prose; use Outset's typed editors and validation for automation.
+
+## Optional reading-edition tools
+
+Requires Node.js 22 or newer and npm; link checking also uses Python 3.
 
 ```sh
 npm ci
@@ -36,16 +36,14 @@ npm test
 npm run check:links
 ```
 
-Validate your own reading corpus against an authoritative compiled pack snapshot:
+The included compiled snapshot contains only the original homebrew pack, compiled against Outset's SRD base. The reading validator checks syntax, references, book membership, and agreement with that snapshot. It does not compile game mechanics or install content. Reading editions currently have an application-bundled delivery path, separate from rules-source import.
 
-```sh
-npm run validate -- path/to/editions --snapshot path/to/compiled-packs.json
-```
+Use [author-outset-compendium](https://github.com/outset-vtt/agent-plugins/tree/main/plugins/outset-creator/skills/author-outset-compendium) for agent-assisted authoring.
 
-The snapshot is a JSON array of compiled compendium packs, not a raw source bundle. The validator performs no network requests and does not need an Outset account. It checks reading syntax, identity, source bindings, references, and book membership. It does not compile rules or certify the truth of a snapshot. See [validation](guides/validation.md).
+## Versions and reuse
 
-## Compatibility and contributions
+Guide release **0.2.0** targets SRD **5.2.1**. The SRD edition is distinct from an Outset release ID or your homebrew version. Reading wire formats retain `dm-harness-publication` and `dm-harness-publication-book`, version **0.0.1**.
 
-This guide release is **0.1.0**. Reading wire formats retain their existing `dm-harness-publication` and `dm-harness-publication-book` names and version **0.0.1**. `dm-harness` is a historical protocol identifier, not a requirement to access a private repository.
+The tooling and original examples use the [MIT license](LICENSE). That license does not replace the SRD's own attribution or license notices. Preserve the notices supplied with your base when copying or distributing SRD-derived material. Keep private source exports outside this repository.
 
-Prefer small original examples, concrete source review, and documented capability boundaries. Keep source text separate from reading editions. Run the checks above when changing examples or the validator. See [validator provenance](lib/README.md) before changing parser semantics. Do not commit private campaigns, credentials, signed URLs, or unlicensed source books.
+Contributions should preserve this SRD-first workflow and use original or properly attributed examples. Run the checks above; see [parser provenance](lib/README.md) before changing validation semantics.
