@@ -18,7 +18,7 @@ The example is an additive content pack. It does not define actor profiles or re
 
 ## Distinguish prose from automation
 
-The example entries are intentionally readable source data. Their attack rolls, damage, charge spending, recovery, and spell effects are resolved manually. Setting `type: monster` or `type: spell` does not by itself wire a creature sheet or casting action.
+The [Reed Warden](structured-monster.md) includes the fields required by the inherited monster importer and `data.sheetAbilities` with action-v2 Staff rolls. Its HP becomes a sheet resource. The signal, lantern charges/recovery, and spell effects remain manual. Setting `type: monster` or `type: spell` alone does not wire a creature sheet or casting action.
 
 Use the current typed compendium editors and inherited SRD actor profiles to implement supported mechanics. Copy field IDs from that base or authoring context, not labels guessed from a printed stat block. Use strict action-v2 pipelines and actual installed resources and conditions. Check action costs, targeting, zero-resource cases, recovery timing, and conditional effects in the editor's validation and test tools.
 

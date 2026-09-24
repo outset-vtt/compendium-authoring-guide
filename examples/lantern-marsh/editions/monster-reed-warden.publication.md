@@ -4,20 +4,22 @@ version: "0.0.1"
 id: "lantern-marsh-monster-reed-warden"
 title: "Reed Warden"
 entry: "lantern-marsh-core:monster:reed-warden"
-sourceHash: "entry-b42d4b7663917583"
+sourceHash: "entry-0a1114bd71e961e0"
 source: "Lantern Marsh, first edition"
 attribution: "Original Outset VTT example content, MIT license. No third-party rules text."
 ---
 
 ## Marsh Guardian {#lantern-marsh-warden-overview}
 
-A Reed Warden is a Medium Humanoid that guards raised paths through the marsh.
+A Reed Warden is a Medium Humanoid, Neutral, that guards raised paths through the marsh.
 
 | Statistic | Value |
 | --- | --- |
 | Armor Class | 12 |
-| Hit Points | 9 |
+| Hit Points | 9 (2d8) |
 | Speed | 30 feet |
+| Challenge | 1/8 (25 XP) |
+| Proficiency Bonus | +2 |
 | Strength | 10 |
 | Dexterity | 14 |
 | Constitution | 10 |
