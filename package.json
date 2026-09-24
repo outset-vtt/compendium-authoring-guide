@@ -1,0 +1,22 @@
+{
+  "name": "outset-compendium-authoring-guide",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node scripts/validate-publications.mjs",
+    "validate:examples": "node scripts/validate-publications.mjs examples/lantern-marsh/editions --snapshot examples/lantern-marsh/source/compiled-packs.json",
+    "test": "node --test",
+    "check:links": "python3 scripts/check-links.py"
+  },
+  "dependencies": {
+    "unified": "11.0.5",
+    "remark-parse": "11.0.0",
+    "remark-gfm": "4.0.1",
+    "yaml": "2.9.0"
+  }
+}
