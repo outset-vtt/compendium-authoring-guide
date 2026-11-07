@@ -1,11 +1,11 @@
 # Lantern Marsh SRD-base review
 
-Reviewed 2026-09-24; structured monster update follows guide 0.2.0. This revision deliberately replaces the old standalone mini-system example with an additive homebrew pack for Outset's D&D SRD 5.2.1. Earlier example content remains in Git history; these changes are authored homebrew revisions, not formatting-only corrections.
+Reviewed 2026-09-24; structured monster update follows guide 0.2.0. Revised 2026-11-07: Staff Attack and Staff Damage accept zero or one creature target (`minTargets: 0`), so they roll without a selected target like ordinary weapon rolls; reading facts are unchanged and the two edition bindings were re-reviewed. This revision deliberately replaces the old standalone mini-system example with an additive homebrew pack for Outset's D&D SRD 5.2.1. Earlier example content remains in Git history; these changes are authored homebrew revisions, not formatting-only corrections.
 
 ## Source and compilation
 
-- `source/pack.json` SHA-256: `b71c5c1852df9a749885a47503ac5fcfd3bb8c9a9f78e519271c53addcc3a6bc`
-- `source/compiled-packs.json` SHA-256: `87acd454ecfa0eb0962bc7f848ebd09e555f521c18a6fefb44d89a78a62f5394`
+- `source/pack.json` SHA-256: `43913c035d661d6b2bbd5afcfd1cb0b60f59ed178a07dbc8e85bd3a1957129b5`
+- `source/compiled-packs.json` SHA-256: `c0655e40da260a1d4dac6171382d625ef77c46c4da95565f644cfe21348780e5`
 - `source/introduction.md` SHA-256: `f4abdc6161cde59b8c129fd2fed5c47858b0602d43611b1e3c368ad433c0799b`
 
 The pack targets canonical system `dnd-srd-5-2-1`. It was composed with Outset's built-in SRD 5.2.1 and compiled successfully. The saved snapshot contains only the compiled original homebrew pack; it omits SRD source and built-in packs. Reading bindings use the compiler's returned hashes. The portable validator consumes that snapshot and does not include the compiler.

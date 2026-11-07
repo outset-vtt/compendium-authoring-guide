@@ -63,7 +63,7 @@
                   "costs": [],
                   "targeting": {
                     "kind": "creature",
-                    "minTargets": 1,
+                    "minTargets": 0,
                     "maxTargets": 1,
                     "range": 5
                   },
@@ -108,7 +108,7 @@
                   "costs": [],
                   "targeting": {
                     "kind": "creature",
-                    "minTargets": 1,
+                    "minTargets": 0,
                     "maxTargets": 1,
                     "range": 5
                   },

@@ -52,7 +52,7 @@ If Reed Warden is missing, confirm the release is installed in this campaign, th
 
 ## 5. Roll and verify
 
-Use a disposable practice target within 5 feet if the action prompts for one.
+Staff Attack and Staff Damage roll with or without a selected target. To roll against a creature, select a disposable practice target within 5 feet first.
 
 - Run **Staff Attack**. Its resolved roll should be `1d20+2`; the random total will vary.
 - After deciding whether it hits, run **Staff Damage**. Expect `1d6` Bludgeoning.

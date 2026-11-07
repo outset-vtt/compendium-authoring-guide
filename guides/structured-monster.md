@@ -30,7 +30,7 @@ The example has no proficient saves or skills, so its proficiency-rank and bonus
 | Staff Attack | `1d20 + {strengthMod} + {proficiency}` | Rolls at +2 for STR 10 and proficiency +2 |
 | Staff Damage | `1d6 + {strengthMod}` | Rolls 1d6 Bludgeoning; `followUp: true` avoids consuming another Action |
 
-Both pipelines declare one creature target at range 5 feet, semantic melee-weapon tags, and chat-card presentation. The damage roll declares `damageType: bludgeoning`. The source uses inherited calculated tokens, so changing Strength changes the roll bonus without editing the expression.
+Both pipelines accept zero or one creature target at range 5 feet, so they roll with or without a selected creature like ordinary weapon rolls. They also declare semantic melee-weapon tags and chat-card presentation. The damage roll declares `damageType: bludgeoning`. The source uses inherited calculated tokens, so changing Strength changes the roll bonus without editing the expression.
 
 These are separate roll buttons. Confirm the target, reach, and hit before using Staff Damage. The example has no outcome branches or resource effects: it does not automatically decide hits, subtract target HP, or double critical-hit dice. Apply those results and critical adjustments through the table's normal controls. Action timing records economy; it is not an enforcement gate.
 

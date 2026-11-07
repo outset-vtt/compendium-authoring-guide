@@ -64,7 +64,7 @@
                     "costs": [],
                     "targeting": {
                       "kind": "creature",
-                      "minTargets": 1,
+                      "minTargets": 0,
                       "maxTargets": 1,
                       "range": 5
                     },
@@ -109,7 +109,7 @@
                     "costs": [],
                     "targeting": {
                       "kind": "creature",
-                      "minTargets": 1,
+                      "minTargets": 0,
                       "maxTargets": 1,
                       "range": 5
                     },
@@ -212,7 +212,7 @@
                     "costs": [],
                     "targeting": {
                       "kind": "creature",
-                      "minTargets": 1,
+                      "minTargets": 0,
                       "maxTargets": 1,
                       "range": 5
                     },
@@ -257,7 +257,7 @@
                     "costs": [],
                     "targeting": {
                       "kind": "creature",
-                      "minTargets": 1,
+                      "minTargets": 0,
                       "maxTargets": 1,
                       "range": 5
                     },
@@ -302,7 +302,7 @@
             }
           ]
         },
-        "contentHash": "entry-0a1114bd71e961e0"
+        "contentHash": "entry-525868512e0f4c86"
       },
       {
         "id": "signal-lantern",
@@ -341,7 +341,7 @@
         "contentHash": "entry-e43847d9e32b0451"
       }
     ],
-    "contentHash": "pack-d61f9b0a719dcb1e",
+    "contentHash": "pack-15ea74de7247ba50",
     "immutable": true
   }
 ]

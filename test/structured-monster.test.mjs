@@ -37,7 +37,7 @@ test('Staff has separate primary and follow-up rolls and manual signal has no pr
   assert.equal(damage.pipeline.rolls[0].damageType, 'bludgeoning');
   assert.equal(damage.followUp, true);
   for (const action of staff.actions) {
-    assert.deepEqual(action.pipeline.targeting, {kind:'creature',minTargets:1,maxTargets:1,range:5});
+    assert.deepEqual(action.pipeline.targeting, {kind:'creature',minTargets:0,maxTargets:1,range:5});
     assert.deepEqual(action.pipeline.effects, []);
     assert.deepEqual(action.pipeline.outcomes, []);
     assert.deepEqual(action.pipeline.costs, []);
