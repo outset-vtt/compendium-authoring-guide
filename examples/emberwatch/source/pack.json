@@ -1,0 +1,425 @@
+{
+  "id": "emberwatch-core",
+  "name": "Emberwatch Field Guide",
+  "systemId": "dnd-srd-5-2-1",
+  "source": "Original homebrew; SRD references retain their own attribution",
+  "version": "0.2.0",
+  "entries": [
+    {
+      "id": "ashglass-sentinel",
+      "type": "monster",
+      "name": "Ashglass Sentinel",
+      "source": "Emberwatch, original homebrew 0.2.0",
+      "data": {
+        "description": "A brass skeleton wrapped in ashglass plates patrols the abandoned signal towers of Emberwatch. Medium Construct, Unaligned. AC 15; HP 39 (6d8 + 12); Speed 30 feet. STR 16, DEX 12, CON 14, INT 6, WIS 12, CHA 8. Constitution save +4; Perception +3. Challenge 1 (200 XP; provisional balance). Ash Spear: melee attack +5, reach 5 feet, one creature; on a hit, 1d8 + 3 Piercing damage. Cinder Guard: as a Bonus Action, gain 5 Temporary Hit Points; these do not stack. Confirm hits and apply spear damage using the table controls.",
+        "attribution": "Original Outset VTT example content, MIT license.",
+        "size": "medium",
+        "creatureType": "Construct",
+        "alignment": "Unaligned",
+        "ac": 15,
+        "hp": {
+          "average": 39,
+          "formula": "6d8 + 12"
+        },
+        "speed": "30 ft.",
+        "challenge": "1 (XP 200; PB +2)",
+        "proficiency": 2,
+        "abilities": {
+          "strength": 16,
+          "dexterity": 12,
+          "constitution": 14,
+          "intelligence": 6,
+          "wisdom": 12,
+          "charisma": 8
+        },
+        "saves": {
+          "strength": 3,
+          "dexterity": 1,
+          "constitution": 4,
+          "intelligence": -2,
+          "wisdom": 1,
+          "charisma": -1
+        },
+        "skills": {
+          "perception": 3
+        },
+        "savingThrowProficiencyRanks": {
+          "constitution": 1
+        },
+        "savingThrowBonuses": {},
+        "skillProficiencyRanks": {
+          "perception": 1
+        },
+        "skillBonuses": {},
+        "sheetAbilities": [
+          {
+            "id": "ashglass-spear",
+            "name": "Ash Spear",
+            "category": "feature",
+            "timing": "action",
+            "description": "Melee attack +5; reach 5 feet; one creature. On a confirmed hit, roll 1d8 + 3 Piercing damage. Critical hits and target HP application use the table controls.",
+            "actions": [
+              {
+                "id": "ash-spear-attack",
+                "label": "Ash Spear Attack",
+                "kind": "attack",
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "ash-spear-attack",
+                  "label": "Ash Spear Attack",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "creature",
+                    "minTargets": 1,
+                    "maxTargets": 1,
+                    "range": 5,
+                    "requiresLineOfSight": true
+                  },
+                  "rolls": [
+                    {
+                      "id": "attack",
+                      "kind": "attack",
+                      "label": "Ash Spear Attack",
+                      "expression": "1d20 + {strengthMod} + {proficiency}",
+                      "abilityScoreId": "strength",
+                      "tags": [
+                        "weapon",
+                        "attack",
+                        "melee-weapon-attack"
+                      ]
+                    }
+                  ],
+                  "outcomes": [],
+                  "effects": [],
+                  "semantics": {
+                    "tags": [
+                      "weapon",
+                      "attack",
+                      "melee-weapon-attack"
+                    ]
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              },
+              {
+                "id": "ash-spear-damage",
+                "label": "Ash Spear Damage",
+                "kind": "damage",
+                "followUp": true,
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "ash-spear-damage",
+                  "label": "Ash Spear Damage",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "creature",
+                    "minTargets": 1,
+                    "maxTargets": 1,
+                    "range": 5,
+                    "requiresLineOfSight": true
+                  },
+                  "rolls": [
+                    {
+                      "id": "damage",
+                      "kind": "damage",
+                      "label": "Ash Spear Damage",
+                      "expression": "1d8 + {strengthMod}",
+                      "abilityScoreId": "strength",
+                      "tags": [
+                        "weapon",
+                        "attack",
+                        "melee-weapon-attack"
+                      ],
+                      "damageType": "piercing"
+                    }
+                  ],
+                  "outcomes": [],
+                  "effects": [],
+                  "semantics": {
+                    "tags": [
+                      "weapon",
+                      "attack",
+                      "melee-weapon-attack"
+                    ]
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "cinder-guard",
+            "name": "Cinder Guard",
+            "category": "feature",
+            "timing": "bonusAction",
+            "description": "Gain 5 Temporary Hit Points. Keep a higher existing temporary total; these do not stack.",
+            "actions": [
+              {
+                "id": "cinder-guard",
+                "label": "Cinder Guard",
+                "kind": "utility",
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "cinder-guard",
+                  "label": "Cinder Guard",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "self"
+                  },
+                  "rolls": [],
+                  "outcomes": [],
+                  "effects": [
+                    {
+                      "kind": "modifyResource",
+                      "target": "source",
+                      "resourceId": "hp",
+                      "field": "temporary",
+                      "operation": "max",
+                      "value": {
+                        "kind": "constant",
+                        "value": 5
+                      }
+                    }
+                  ],
+                  "semantics": {
+                    "timing": "bonusAction",
+                    "tags": [
+                      "monster-feature"
+                    ]
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "systemId": "dnd-srd-5-2-1"
+    },
+    {
+      "id": "emberkin",
+      "type": "race",
+      "name": "Emberkin",
+      "systemId": "dnd-srd-5-2-1",
+      "source": "Emberwatch, original homebrew 0.2.0",
+      "data": {
+        "description": "Emberkin descend from families who kept the volcanic watchfires burning through a century of winter. Their eyes resemble banked coals. Size: Medium. Speed: 35 feet. Darkvision: 60 feet. Banked Ember: your Hit Point maximum increases by 1 at level 1 and again whenever you gain a character level. Ember Gift: you know Fire Bolt from level 1; choose Intelligence, Wisdom, or Charisma for its spellcasting ability.",
+        "attribution": "Original Outset VTT example content, MIT license. References the separately attributed SRD Fire Bolt entry."
+      },
+      "structured": {
+        "kind": "race",
+        "speed": 35,
+        "sizeOptions": [
+          "Medium"
+        ],
+        "darkvisionRangeFeet": 60,
+        "hitPointMaximumBonus": {
+          "perCharacterLevel": 1,
+          "label": "Banked Ember"
+        },
+        "choiceGroups": [
+          {
+            "id": "ember-gift",
+            "label": "Ember Gift",
+            "count": 1,
+            "spellcastingAbilities": [
+              "intelligence",
+              "wisdom",
+              "charisma"
+            ],
+            "options": [
+              {
+                "id": "spark",
+                "label": "Spark",
+                "grants": {
+                  "label": "Ember Gift",
+                  "spells": [
+                    {
+                      "packId": "dnd-srd-5-2-1-spells",
+                      "entryId": "fire-bolt",
+                      "characterLevel": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "emberwatch-wayfinder",
+      "type": "background",
+      "name": "Emberwatch Wayfinder",
+      "systemId": "dnd-srd-5-2-1",
+      "source": "Emberwatch, original homebrew 0.2.0",
+      "data": {
+        "description": "You carried evacuation maps between Emberwatch signal towers, reading smoke and terrain before choosing a safe route. Ability scores: Dexterity, Constitution, Wisdom; increase one by 2 and another by 1, or each by 1. Skills: Perception and Survival. Origin feat: Alert. Tool proficiency: Cartographer's Tools. Equipment: Cartographer's Tools, Traveler's Clothes, Rope, 5 Torches, and 10 GP. Alert attaches as a feat; verify its initiative bonus separately.",
+        "attribution": "Original Outset VTT example content, MIT license. References separately attributed SRD feat and equipment entries."
+      },
+      "structured": {
+        "kind": "background",
+        "abilityScoreOptions": [
+          "Dexterity",
+          "Constitution",
+          "Wisdom"
+        ],
+        "skillProficiencies": [
+          "Perception",
+          "Survival"
+        ],
+        "feat": {
+          "packId": "dnd-srd-5-2-1-character-options",
+          "entryId": "alert"
+        },
+        "startingEquipment": {
+          "items": [
+            {
+              "packId": "dnd-srd-5-2-1-equipment",
+              "entryId": "cartographer-s-tools",
+              "quantity": 1
+            },
+            {
+              "packId": "dnd-srd-5-2-1-equipment",
+              "entryId": "clothes-traveler-s",
+              "quantity": 1
+            },
+            {
+              "packId": "dnd-srd-5-2-1-equipment",
+              "entryId": "rope",
+              "quantity": 1
+            },
+            {
+              "packId": "dnd-srd-5-2-1-equipment",
+              "entryId": "torch",
+              "quantity": 5
+            }
+          ],
+          "currency": {
+            "gp": 10
+          }
+        },
+        "toolProficiencies": [
+          {
+            "packId": "dnd-srd-5-2-1-equipment",
+            "entryId": "cartographer-s-tools"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cinderward-brooch",
+      "type": "item",
+      "name": "Cinderward Brooch",
+      "systemId": "dnd-srd-5-2-1",
+      "source": "Emberwatch, original homebrew 0.2.0",
+      "data": {
+        "description": "Wondrous item, uncommon; requires attunement. A volcanic-glass pin remembers the warmth of the old watchfires. While worn and attuned, you gain a +1 bonus to Armor Class. The brooch has 3 charges. While worn and attuned, take an Action and spend 1 charge to gain 5 Temporary Hit Points, keeping a higher existing temporary total. It regains all spent charges at dawn. Weight: 0.1 lb.",
+        "attribution": "Original Outset VTT example content, MIT license."
+      },
+      "structured": {
+        "kind": "item",
+        "item": {
+          "id": "cinderward-brooch",
+          "name": "Cinderward Brooch",
+          "category": "magicItem",
+          "quantity": 1,
+          "metadata": {
+            "rarity": "Uncommon",
+            "requiresAttunement": true
+          },
+          "weight": {
+            "value": 0.1,
+            "unit": "lb"
+          },
+          "charges": {
+            "current": 3,
+            "max": 3,
+            "reset": "dawn"
+          },
+          "timing": "action",
+          "actions": [
+            {
+              "id": "kindle-ward",
+              "label": "Kindle Ward",
+              "kind": "utility",
+              "pipeline": {
+                "schemaVersion": 2,
+                "id": "kindle-ward",
+                "label": "Kindle Ward",
+                "requirements": [
+                  {
+                    "kind": "itemState",
+                    "state": "equippedAndAttuned"
+                  }
+                ],
+                "costs": [
+                  {
+                    "kind": "itemCharge",
+                    "amount": 1
+                  }
+                ],
+                "targeting": {
+                  "kind": "self"
+                },
+                "rolls": [],
+                "outcomes": [],
+                "effects": [
+                  {
+                    "kind": "modifyResource",
+                    "target": "source",
+                    "resourceId": "hp",
+                    "field": "temporary",
+                    "operation": "max",
+                    "value": {
+                      "kind": "constant",
+                      "value": 5
+                    }
+                  }
+                ],
+                "semantics": {
+                  "timing": "action",
+                  "tags": [
+                    "magic-item"
+                  ]
+                },
+                "presentation": {
+                  "chatCard": true
+                }
+              }
+            }
+          ],
+          "rulesEffects": [
+            {
+              "id": "cinderward-ac",
+              "label": "Cinderward protection",
+              "appliesWhen": "equippedAndAttuned",
+              "target": "attribute",
+              "attributeId": "armorClass",
+              "operation": "add",
+              "value": 1
+            }
+          ],
+          "equipPlacements": [
+            {
+              "id": "neck",
+              "label": "Neck",
+              "slotIds": [
+                "neck"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

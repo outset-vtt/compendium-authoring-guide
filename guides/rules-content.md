@@ -24,6 +24,12 @@ Use the current typed compendium editors and inherited SRD actor profiles to imp
 
 Additional entries such as backgrounds and species should use the existing SRD-compatible typed forms. Selecting or installing a new option is separate from granting it to a character.
 
+[Emberwatch](emberwatch.md) provides complete typed species, background and magic
+item examples. It separates species/background `structured` fields from source
+prose, tool proficiency from equipment, and item activation requirements from
+passive effect gates. Its check path covers compilation and private gameplay;
+known gaps and manual responsibilities are explicit.
+
 ## Link the intended source
 
 Link SRD references only to IDs observed in the selected compiled SRD packs. A trait called Darkvision is not automatically a reference to the spell. A reading edition may link both your homebrew and the base; supply the relevant compiled packs for validation. The small included snapshot contains only Lantern Marsh, so SRD links need an additional authoritative SRD snapshot.

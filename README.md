@@ -25,6 +25,19 @@ The [example pack](examples/lantern-marsh/README.md) adds an original monster, m
 
 The [structured Reed Warden walkthrough](guides/structured-monster.md) shows SRD sheet import, HP, ability scores, and executable Staff attack and damage rolls. Its signal and the item/spell effects remain manual. Prose alone does not implement mechanics.
 
+## Example: Emberwatch
+
+[Emberwatch](examples/emberwatch/README.md) adds four integrated examples:
+Ashglass Sentinel (monster), Emberkin (species), Emberwatch Wayfinder (background),
+and Cinderward Brooch (charged magic item). Its [source pack](examples/emberwatch/source/pack.json)
+demonstrates spellcasting-ability choices, Darkvision, HP per level, typed tool
+grants, equipment, item activation requirements, charges and Temporary HP effects.
+
+Follow the [field-by-field walkthrough and gameplay checklist](guides/emberwatch.md).
+The [review](examples/emberwatch/review.md) distinguishes executable behavior from
+manual adjudication and known limitations, including Alert's initiative bonus.
+This is rules source; it does not include a reading edition.
+
 ## Optional reading-edition tools
 
 Requires Node.js 22 or newer and npm; link checking also uses Python 3.

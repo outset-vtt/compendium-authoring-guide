@@ -13,6 +13,8 @@ Open [the Lantern Marsh pack](../examples/lantern-marsh/source/pack.json) and fi
 The example pack uses `systemId: dnd-srd-5-2-1`. Its item has 3 charges, an action cost, and dawn recharge. Those are homebrew rules written using SRD conventions; this prose example does not create an automatic charge tracker.
 
 For a monster with structured stats and executable rolls, follow the [Reed Warden walkthrough](structured-monster.md).
+For a species, background, or charged item with executable effects, use
+[Emberwatch](emberwatch.md), including its documented manual boundaries.
 
 ## 3. Validate and save
 
@@ -28,6 +30,13 @@ cd compendium-authoring-guide
 npm ci
 mkdir -p output
 npm run prepare:example -- /path/to/srd-source.json output/lantern-marsh.json
+```
+
+The default pack is Lantern Marsh. To select Emberwatch instead, pass its pack
+as the optional third argument:
+
+```sh
+npm run prepare:example -- /path/to/srd-source.json output/emberwatch.json examples/emberwatch/source/pack.json
 ```
 
 Import the resulting full-system JSON through personal authoring. The helper refuses a different system/edition, a duplicate example pack, and an existing output file. It does not download the SRD, compile mechanics, create a campaign extension, or validate the authenticity of your source export. Do not commit that export or the assembled output here.
