@@ -2,6 +2,10 @@
 
 Reading editions are optional passive Markdown companions to your SRD-based compendium. Author and validate the SRD copy and homebrew pack first. Formatting does not replace the base system or implement mechanics. Historical wire identifiers remain unchanged.
 
+## Try the reading example
+
+Lantern Marsh includes an [item edition](../examples/lantern-marsh/editions/item-signal-lantern.publication.md), a spell, a monster and an introduction organized into a book. Its Signal Lantern describes charges and recharge as text; the reading edition does not automate them. Follow the [local reading checks](validation.md#run-the-supplied-reading-example) to copy and validate these documents.
+
 ## Entry documents
 
 A `*.publication.md` file starts with strict YAML frontmatter:

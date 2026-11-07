@@ -81,7 +81,7 @@ export async function readCorpus(directory) {
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   try {
     const [directory, flag, snapshot, ...extra] = process.argv.slice(2);
-    if (!directory || flag !== '--snapshot' || !snapshot || extra.length) throw new Error('Usage: npm run validate -- <editions-directory> --snapshot <compiled-packs.json>');
+    if (!directory || flag !== '--snapshot' || !snapshot || extra.length) throw new Error('Usage: npm run check:reading -- <editions-directory> --snapshot <compiled-packs.json>');
     const packs = JSON.parse(await readFile(resolve(snapshot),'utf8'));
     console.log(JSON.stringify(validateCorpus(await readCorpus(resolve(directory)),packs),null,2));
   } catch (error) { console.error(error.message); process.exitCode=1; }

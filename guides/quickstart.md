@@ -1,28 +1,73 @@
-# Add your first pack to the SRD
+# Make your first playable monster
 
-## 1. Start from the published SRD
+Create **Reed Warden**, an original SRD-based monster, then roll its Staff attack and damage in Outset. Finish with **AC 12, HP 9/9, Speed 30 feet, Staff Attack +2 and Staff Damage 1d6**.
 
-In Outset, open `/compendium` and choose **Create or edit compendiums**. Create a private copy of the built-in **D&D SRD 5.2.1**. Keep the copied system, modules, built-in packs, actor profiles, and preserved source data. Give your compendium a project name without renaming the base system or changing its edition.
+You need an [Outset account](https://app.outset-vtt.gg/) with DM access to a private test campaign using D&D SRD 5.2.1. This route uses the campaign editor; no agent or local command-line tools are required.
 
-Outset adds an empty personal pack. Use it for your additions so that homebrew has its own identities and attribution. If you are authoring for a campaign, use its Rules workspace to create an extension against its installed SRD instead; see [delivery](delivery.md).
+Today, this tutorial adds structured JSON through the editor. Plain-prose Markdown import is not available through this workflow.
 
-## 2. Add one original entry
+## 1. Create a campaign extension
 
-Open [the Lantern Marsh pack](../examples/lantern-marsh/source/pack.json) and find `signal-lantern`. Add it to your project's homebrew pack through the compendium editor or copy the complete example pack into the project's `compendiumPacks` array in Source. Preserve all existing packs. Use a new pack ID if that ID is already present.
+Open your private test campaign, then its **Rules** workspace. Create a new project against the campaign's installed SRD base and name it **Lantern Marsh practice**. Keep the supplied base identity, edition and release provenance.
 
-The example pack uses `systemId: dnd-srd-5-2-1`. Its item has 3 charges, an action cost, and dawn recharge. Those are homebrew rules written using SRD conventions; this prose example does not create an automatic charge tracker.
+Use a fresh extension for this exercise. A personal compendium's **Save version** creates a different artifact and cannot substitute for campaign publication and installation.
 
-For a monster with structured stats and executable rolls, follow the [Reed Warden walkthrough](structured-monster.md).
-For a species, background, or charged item with executable effects, use
-[Emberwatch](emberwatch.md), including its documented manual boundaries.
+## 2. Add the example pack
 
-## 3. Validate and save
+Open the [Lantern Marsh source pack](../examples/lantern-marsh/source/pack.json) and use GitHub's **Raw** view to copy the complete JSON object.
 
-Use the editor's compiler diagnostics. Check the entry's description, type, and references. For automated behavior, also author and test the required typed item, resource, and action fields against the inherited SRD profiles. **Save version** when the draft is valid. Saving a personal version does not install it in a campaign.
+In your extension's **Source** section, add that object to the document's `compendiumPacks` array. Preserve the enclosing extension document, base reference, modules and any existing packs. If the array is empty, its contents become the single copied pack object. Do not replace the complete document with the pack.
 
-## Optional: prepare a full-system JSON import locally
+Keep pack ID `lantern-marsh-core` and monster entry ID `reed-warden` for this exercise. If the campaign already has this pack, use a fresh test campaign or review the existing extension instead of adding a duplicate.
 
-Obtain the complete source JSON from your authorized SRD-based project or release. A compiled pack snapshot is not that source. The helper accepts a raw bundle with `system` or a `system-bundle` project document. It preserves the complete base and appends the original example pack:
+The pack also includes Signal Lantern and Marshlight for the reading tutorial. Their effects remain manual; this exercise uses the monster's structured fields and Staff actions.
+
+## 3. Validate, publish and install
+
+1. Review the editor's diagnostics and resolve errors. Confirm the monster's Staff actions are present, not only its description.
+2. Review the release changes, enter a version newer than the project's previous release and release notes, and choose **Publish release**.
+3. Preview installing that release into your test campaign. Confirm the intended addition, then complete installation.
+
+A saved draft or published release alone does not change the campaign. Install the pack before creating the monster. See [campaign delivery](delivery.md#campaign-homebrew) for these stages.
+
+## 4. Create Reed Warden from the installed pack
+
+Return to the campaign and open monster creation. Under **Compendium monster**, search for **Reed Warden**, choose the Lantern Marsh entry, and complete creation. Start from the installed entry rather than an empty custom stat block.
+
+Open the new sheet and check:
+
+| Field | Expected value |
+| --- | --- |
+| Size / type | Medium Humanoid |
+| AC / HP / speed | 12 / 9 of 9 / 30 feet |
+| Ability scores | STR 10, DEX 14, CON 10, INT 10, WIS 12, CHA 10 |
+| Staff actions | Staff Attack and Staff Damage |
+| Other feature | Safe-path signal (manual) |
+
+If Reed Warden is missing, confirm the release is installed in this campaign, then reload. If stats differ, inspect the source before continuing.
+
+## 5. Roll and verify
+
+Use a disposable practice target within 5 feet if the action prompts for one.
+
+- Run **Staff Attack**. Its resolved roll should be `1d20+2`; the random total will vary.
+- After deciding whether it hits, run **Staff Damage**. Expect `1d6` Bludgeoning.
+- Reload the campaign and reopen the monster. Saved stats and both Staff actions should remain available.
+
+This example rolls dice. You still adjudicate hits, adjust critical-hit dice and apply damage through the table's controls. The signal's duration and usage limit are also manual. Import does not generate artwork or place a token.
+
+If a button is absent or a formula differs, the exercise has not passed merely because validation succeeded. Check the installed release and `data.sheetAbilities`; the [field walkthrough](structured-monster.md) explains the source.
+
+## Next steps
+
+- [Change the monster's stats or actions](structured-monster.md).
+- [Make an item with tracked charges, a species or a background](emberwatch.md).
+- [Format a readable book](reading-editions.md).
+- [Use a personal library instead of campaign rules](delivery.md#private-personal-compendiums).
+
+## Optional: prepare a personal full-system import locally
+
+For personal authoring, obtain your complete authorized SRD source export. A compiled snapshot is not source. With Node.js 22+:
 
 ```sh
 git clone https://github.com/outset-vtt/compendium-authoring-guide.git
@@ -32,24 +77,4 @@ mkdir -p output
 npm run prepare:example -- /path/to/srd-source.json output/lantern-marsh.json
 ```
 
-The default pack is Lantern Marsh. To select Emberwatch instead, pass its pack
-as the optional third argument:
-
-```sh
-npm run prepare:example -- /path/to/srd-source.json output/emberwatch.json examples/emberwatch/source/pack.json
-```
-
-Import the resulting full-system JSON through personal authoring. The helper refuses a different system/edition, a duplicate example pack, and an existing output file. It does not download the SRD, compile mechanics, create a campaign extension, or validate the authenticity of your source export. Do not commit that export or the assembled output here.
-
-## Optional: format a reading edition
-
-Run `npm run validate:examples` to check the four supplied reading documents and book. Compare [the item edition](../examples/lantern-marsh/editions/item-signal-lantern.publication.md) with its source entry. The edition keeps every cost, limit, and exception and links the exact Marshlight entry.
-
-For a presentation-only experiment:
-
-```sh
-cp -R examples/lantern-marsh/editions output/my-editions
-npm run validate -- output/my-editions --snapshot examples/lantern-marsh/source/compiled-packs.json
-```
-
-Preserve section IDs. If source facts change, obtain fresh compiled packs and re-review before rebinding hashes. Follow [reading editions](reading-editions.md) for chapter introductions and book ordering. These Markdown files do not travel through the full-system JSON import.
+To choose Emberwatch, add `examples/emberwatch/source/pack.json` as the third argument. The helper preserves the full base and refuses collisions or existing output files; it does not compile mechanics. Import its output only through personal authoring, validate, then **Save version**. Do not import this full-system output into a campaign extension or commit your base export.

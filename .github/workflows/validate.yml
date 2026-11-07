@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci --ignore-scripts
-      - run: npm run validate:examples
-      - run: npm test
-      - run: npm run check:links
+      - name: Check reading editions (not gameplay)
+        run: npm run check:reading-examples
+      - name: Check tooling and fixture regressions
+        run: npm test
+      - name: Check repository-relative Markdown links
+        run: npm run check:links

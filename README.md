@@ -1,62 +1,61 @@
-# Author SRD-based compendiums for Outset
+# Create custom content for Outset
 
-Start with Outset's built-in **D&D SRD 5.2.1** and add your own content in a separate compendium pack. Keep the SRD's system identity, actor profiles, attributes, conditions, and action conventions. This guide assumes that base throughout.
+Build playable monsters, items, species and backgrounds on Outset's **D&D SRD 5.2.1** base. This repository contains human-facing guides, original examples and local document checks.
 
-## Start in Outset
+[Open Outset](https://app.outset-vtt.gg/) · [Make your first playable monster](guides/quickstart.md) · [Set up an authoring agent](https://github.com/outset-vtt/agent-plugins)
 
-Open `/compendium`, choose **Create or edit compendiums**, and create a private copy of the published SRD. Outset retains the complete base and adds an empty personal pack. Author your monsters, items, spells, backgrounds, or species in that pack, validate the draft, and **Save version**.
+## Choose what you want to make
 
-For campaign homebrew, use the campaign Rules workspace and its extension workflow against the campaign's installed SRD. A private personal version and a campaign extension are different delivery paths; neither requires designing a replacement system.
+| Your goal | Start here | Result |
+| --- | --- | --- |
+| Make a monster with working rolls | [Reed Warden quickstart](guides/quickstart.md) | A campaign monster with HP, Staff Attack and Staff Damage |
+| Make a charged magic item | [Cinderward Brooch](guides/emberwatch.md) | Gated AC, activation requirements, charges and Temporary HP |
+| Make a species or background | [Emberwatch walkthrough](guides/emberwatch.md) | Spell choices, Darkvision, HP per level, skills, tool proficiency and equipment |
+| Format a readable compendium or book | [Reading editions](guides/reading-editions.md) | Linked Markdown documents and ordered chapters; currently application-bundled |
+| Create content with an agent | [Outset Creator skills](https://github.com/outset-vtt/agent-plugins) | Guided authoring; live operations require a separate MCP connection |
 
-## Guides
+Start with a private test campaign for playable examples. For a personal character library instead, [personal authoring](guides/delivery.md#private-personal-compendiums) saves a private version; it does not install campaign rules.
 
-1. [Quickstart](guides/quickstart.md): extend an SRD copy with your first homebrew pack.
-2. [Rules content](guides/rules-content.md): preserve the base, choose entry identities, and add supported mechanical data.
-3. [Reading editions](guides/reading-editions.md): optional reviewed Markdown, tables, and references.
-4. [Source fidelity](guides/source-fidelity.md): preserve rules and distinguish original homebrew from SRD-derived text.
-5. [Delivery](guides/delivery.md): private versions, campaign extensions, and reading editions.
-6. [Validation](guides/validation.md): compile in Outset and validate reading files locally.
+## Pick an example
 
-## Example: Lantern Marsh
+| Example | Best for | What to expect |
+| --- | --- | --- |
+| [Lantern Marsh](examples/lantern-marsh/README.md) | First monster and readable books | Reed Warden has executable Staff rolls. Signal Lantern and Marshlight demonstrate prose and reading editions; their effects remain manual. |
+| [Emberwatch](examples/emberwatch/README.md) | Character options and item mechanics | Four integrated entries with a capability table, [gameplay checklist](guides/emberwatch.md#verify-in-a-private-campaign) and [review evidence](examples/emberwatch/review.md). Alert's initiative bonus remains a documented limitation in the reviewed build. |
 
-The [example pack](examples/lantern-marsh/README.md) adds an original monster, magic item, and spell to SRD 5.2.1. It contains no replacement system definitions or copied SRD rules text. It also demonstrates an optional reading edition and book outline.
+A `source/pack.json` is an additive pack, **not** a complete system import. Follow the selected tutorial before importing it.
 
-`source/pack.json` is a pack to add to your existing SRD-based project, not a complete system import. For a local import file, [the quickstart](guides/quickstart.md) shows how to combine it with your own full SRD source export while preserving the base.
+## Understand the formats
 
-The [structured Reed Warden walkthrough](guides/structured-monster.md) shows SRD sheet import, HP, ability scores, and executable Staff attack and damage rolls. Its signal and the item/spell effects remain manual. Prose alone does not implement mechanics.
+- **Rules source** defines executable behavior through supported typed fields. Validate in Outset, save or publish, and explicitly install campaign releases.
+- **Reading editions** format descriptions and references in Markdown. They do not implement mechanics, and a JSON import does not install adjacent Markdown.
+- **Compiled snapshots** support document checks against a particular rules revision. They are not editable source bundles.
 
-## Example: Emberwatch
+[Rules content](guides/rules-content.md) · [Delivery paths](guides/delivery.md) · [Source fidelity](guides/source-fidelity.md)
 
-[Emberwatch](examples/emberwatch/README.md) adds four integrated examples:
-Ashglass Sentinel (monster), Emberkin (species), Emberwatch Wayfinder (background),
-and Cinderward Brooch (charged magic item). Its [source pack](examples/emberwatch/source/pack.json)
-demonstrates spellcasting-ability choices, Darkvision, HP per level, typed tool
-grants, equipment, item activation requirements, charges and Temporary HP effects.
+## Run the local checks
 
-Follow the [field-by-field walkthrough and gameplay checklist](guides/emberwatch.md).
-The [review](examples/emberwatch/review.md) distinguishes executable behavior from
-manual adjudication and known limitations, including Alert's initiative bonus.
-This is rules source; it does not include a reading edition.
-
-## Optional reading-edition tools
-
-Requires Node.js 22 or newer and npm; link checking also uses Python 3.
+Requires Node.js 22+ and Python 3. From this repository:
 
 ```sh
 npm ci
-npm run validate:examples
+npm run check:reading-examples
 npm test
 npm run check:links
 ```
 
-The included compiled snapshot contains only the original homebrew pack, compiled against Outset's SRD base. The reading validator checks syntax, references, book membership, and agreement with that snapshot. It does not compile game mechanics or install content. Reading editions currently have an application-bundled delivery path, separate from rules-source import.
+| Check | What it proves |
+| --- | --- |
+| `check:reading-examples` | Lantern Marsh's Markdown reading editions agree with their supplied snapshot |
+| `npm test` | Portable tooling and example fixture regressions pass |
+| `check:links` | Repository-relative Markdown file links resolve |
 
-Use [author-outset-compendium](https://github.com/outset-vtt/agent-plugins/tree/main/plugins/outset-creator/skills/author-outset-compendium) for agent-assisted authoring.
+**None of these commands runs Outset's rules engine or proves live gameplay.** Emberwatch has no reading edition. Validate rules in Outset, then exercise the selected example's gameplay checklist. See [validation levels and troubleshooting](guides/validation.md).
 
-## Versions and reuse
+## Versions, contributions and reuse
 
-Guide release **0.2.0** targets SRD **5.2.1**. The SRD edition is distinct from an Outset release ID or your homebrew version. Reading wire formats retain `dm-harness-publication` and `dm-harness-publication-book`, version **0.0.1**.
+This is the development guide on `main`. Use [tagged releases](https://github.com/outset-vtt/compendium-authoring-guide/releases) for fixed snapshots; newer examples on `main` may not be in the latest tag. The tooling package is version **0.2.0**, targets SRD **5.2.1**, and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
 
-The tooling and original examples use the [MIT license](LICENSE). That license does not replace the SRD's own attribution or license notices. Preserve the notices supplied with your base when copying or distributing SRD-derived material. Keep private source exports outside this repository.
+Preserve the SRD-first workflow and run the checks above before contributing. See [parser provenance](lib/README.md) before changing validation semantics.
 
-Contributions should preserve this SRD-first workflow and use original or properly attributed examples. Run the checks above; see [parser provenance](lib/README.md) before changing validation semantics.
+Tooling and original examples are [MIT licensed](LICENSE). Preserve the separate notices supplied with the SRD base. Keep private source exports and account/campaign data out of commits.

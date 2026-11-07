@@ -61,7 +61,7 @@ fields into an unrelated system and assume the same IDs exist.
 
 1. **Portable repository checks:** `npm test` verifies import preparation without
    replacing the base; `npm run check:links` checks local Markdown links.
-   `npm run validate:examples` validates Lantern Marsh's reading edition. Emberwatch
+   `npm run check:reading-examples` validates Lantern Marsh's reading edition. Emberwatch
    has no reading edition, so that command does not validate its mechanics.
 2. **Rules compilation:** Outset validates the complete source against its actual
    base, including typed fields and references. A saved draft is not a validated
