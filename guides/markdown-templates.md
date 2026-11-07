@@ -14,8 +14,11 @@ broader templates: [Ashglass Warden](../examples/emberwatch/markdown/ashglass-wa
 (legendary monster with recharge breath, saves, areas and a grapple),
 [Cinder Lash](../examples/emberwatch/markdown/cinder-lash.md) (weapon),
 [Ashglass Scale](../examples/emberwatch/markdown/ashglass-scale.md) (armor),
-[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion) and
-[Watchfire Sentinel](../examples/emberwatch/markdown/watchfire-sentinel.md) (feat).
+[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion),
+[Watchfire Sentinel](../examples/emberwatch/markdown/watchfire-sentinel.md) (feat), and the
+spells [Ember Bolt](../examples/emberwatch/markdown/ember-bolt.md) (attack cantrip),
+[Cinder Burst](../examples/emberwatch/markdown/cinder-burst.md) (save with an area) and
+[Watchfire Mend](../examples/emberwatch/markdown/watchfire-mend.md) (healing).
 Download one, change it, and import it. The [JSON pack](../examples/emberwatch/source/pack.json)
 remains the same content in its raw form.
 
@@ -77,7 +80,7 @@ A volcanic-glass pin remembers the warmth of the old watchfires.
 - `# Title` starts an entry; one file may hold several. Text before the first
   heading is an error.
 - `- Type:` is required: `Monster`, `Species`, `Background`, `Magic item`,
-  `Item`, `Weapon`, `Armor`, `Consumable`, `Potion` or `Feat`.
+  `Item`, `Weapon`, `Armor`, `Consumable`, `Potion`, `Feat` or `Spell`.
 - `- Id:` is the stable identity. Keep it when you rename a title or a file.
   Without it the title's slug is used. `Source` and `Attribution` are recorded.
 - `## Kind: Name` sections hold mechanics: `Action`, `Bonus action`, `Reaction`,
@@ -109,6 +112,7 @@ with the closest spellings. Equipment accepts `5 Torches` and coins such as
 | Weapon | `Damage: 1d8 slashing`, `Properties` (Finesse, Versatile (1d10), Two-Handed, Ammunition, the rest as text), `Range: 80/320 feet`, `Weapon category: Simple / Martial`, `Weight`, `Cost` | None needed: attack and damage steps use the wielder's Strength, or Dexterity for ranged and Finesse weapons, plus proficiency; Versatile adds a two-handed damage step |
 | Armor | `Armor Class: 16`, `14 + Dex (max 2)`, `11 + Dex`, or `+2` for a shield; `Armor category`, `Strength requirement`, `Stealth: Disadvantage`, `Weight`, `Cost` | None needed: the equipped AC effect, body or off-hand placement and Stealth modifier match the SRD armor |
 | Feat | `Category: Origin / General / Fighting Style / Epic Boon`, `Prerequisite` (shown, never checked), `Repeatable`, `Ability score increase: +1 Wisdom or Constitution` (recorded; applied by hand when taken) | `Passive` with `Effect: +2 to ranged weapon attack rolls`, `+1d4 to weapon damage rolls`, `+1 to saving throws`, `Advantage on Perception checks` or `+1 Armor Class` (carried roll modifiers); action sections become the feature's steps; `Trait` stays text. Backgrounds and species grant it by name. |
+| Spell | `Level: Cantrip / 1..9`, `School`, `Classes` (the system's spellcasting classes), `Casting time`, `Range: Self / Touch / 60 feet`, `Components: V, S, M (…)`, `Duration` (Concentration marks it), `Ritual` | One mechanic at the root: `Attack: Ranged spell attack` with `Damage: 1d8 fire`; or `Save: Dexterity, half damage on a success` with `Damage` and optional `Area: 15-foot cone`; or `Healing: 1d8 + spellcasting modifier`. `Target: Self / One creature / Up to 3 creatures / Each creature in the area`; `Higher levels: +1d8 damage per slot level above 2` (or healing, or targets); `Cantrip scaling: 2d8 at level 5, 3d8 at level 11, 4d8 at level 17`. The spell text stays manual; conditions a spell applies are not yet expressible. |
 | Consumable / Potion | `Rarity`, `Weight`, `Cost` | `Action` or `Bonus action` with `Effect: Regain 2d4 + 2 hit points` (a healing roll that spends one of the item) or the other action fields |
 
 Effect phrases: `Gain N temporary hit points` (keeps the higher total, never
