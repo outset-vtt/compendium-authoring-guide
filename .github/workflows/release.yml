@@ -1,0 +1,40 @@
+name: Publish verified release
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run check:reading-examples
+      - run: npm run check:links
+      - name: Publish the exact checked revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(node -p "require('./package.json').version")
+          tag="v$version"
+          test -z "$(git status --porcelain --untracked-files=no)"
+          test -z "$(git ls-remote --tags origin "refs/tags/$tag")"
+          gh release create "$tag" --target "$GITHUB_SHA" --title "Compendium Authoring Guide $version" --notes-file RELEASE_NOTES.md --draft
+          gh release edit "$tag" --draft=false --latest

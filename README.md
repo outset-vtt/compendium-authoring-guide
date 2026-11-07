@@ -14,6 +14,8 @@ Build playable monsters, items, species and backgrounds on Outset's **D&D SRD 5.
 | Format a readable compendium or book | [Reading editions](guides/reading-editions.md) | Linked Markdown documents and ordered chapters; currently application-bundled |
 | Create content with an agent | [Outset Creator skills](https://github.com/outset-vtt/agent-plugins) | Guided authoring; live operations require a separate MCP connection |
 
+The latest [first-use check](guides/first-use-verification.md) reached private publication but found a production installation blocker; the quickstart is not yet signed off end to end.
+
 Start with a private test campaign for playable examples. For a personal character library instead, [personal authoring](guides/delivery.md#private-personal-compendiums) saves a private version; it does not install campaign rules.
 
 ## Pick an example
@@ -56,7 +58,7 @@ npm run check:links
 
 ## Versions, contributions and reuse
 
-This is the development guide on `main`. The [0.3.0 release](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.3.0) includes both examples, the executable quickstart and standardized example navigation. Download **Source code (zip)** for the complete guide and runnable local checks. The tooling package is version **0.3.0**, targets SRD **5.2.1**, and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
+This is the development guide on `main`. The [0.3.1 release](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.3.1) adds verified release publication, corrected quickstart navigation and an explicit [first-use verification record](guides/first-use-verification.md). Download **Source code (zip)** for the complete guide and runnable local checks. The tooling package is version **0.3.1**, targets SRD **5.2.1**, and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
 
 Preserve the SRD-first workflow and run the checks above before contributing. See [parser provenance](lib/README.md) before changing validation semantics.
 

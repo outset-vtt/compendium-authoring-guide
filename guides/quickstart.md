@@ -6,9 +6,13 @@ You need an [Outset account](https://app.outset-vtt.gg/) with DM access to a pri
 
 Today, this tutorial adds structured JSON through the editor. Plain-prose Markdown import is not available through this workflow.
 
+> **Current production blocker (November 7, 2026):** this route passed saving, server validation and private publication, but installation failed with “Installed rules do not match the pinned revision.” The monster creation and roll steps below remain unverified in that run. See the [first-use verification record](first-use-verification.md). If you encounter this error, stop before creating the monster; do not remove base provenance or treat publication as a successful installation.
+
 ## 1. Create a campaign extension
 
-Open your private test campaign, then its **Rules** workspace. Create a new project against the campaign's installed SRD base and name it **Lantern Marsh practice**. Keep the supplied base identity, edition and release provenance.
+Open your private test campaign. Use the top-left **Campaign** menu, choose **Manage campaign**, select **Rules**, then **Import into Rules Studio**. The built-in SRD initially opens read-only.
+
+Choose **Create rules project** (the plus button beside Projects), name it **Lantern Marsh practice**, and select **Adopt the campaign's installed rules snapshot**. Choose **Create project**. Keep the supplied base identity, edition, revision and release provenance. Adopting a snapshot includes the existing packs, so the source can be large.
 
 Use a fresh extension for this exercise. A personal compendium's **Save version** creates a different artifact and cannot substitute for campaign publication and installation.
 
@@ -16,7 +20,7 @@ Use a fresh extension for this exercise. A personal compendium's **Save version*
 
 Open the [Lantern Marsh source pack](../examples/lantern-marsh/source/pack.json) and use GitHub's **Raw** view to copy the complete JSON object.
 
-In your extension's **Source** section, add that object to the document's `compendiumPacks` array. Preserve the enclosing extension document, base reference, modules and any existing packs. If the array is empty, its contents become the single copied pack object. Do not replace the complete document with the pack.
+In your extension's **JSON source** section, add that object to the document's `compendiumPacks` array. Preserve the enclosing extension document, base reference, modules and any existing packs. If the array is empty, its contents become the single copied pack object. Do not replace the complete document with the pack.
 
 Keep pack ID `lantern-marsh-core` and monster entry ID `reed-warden` for this exercise. If the campaign already has this pack, use a fresh test campaign or review the existing extension instead of adding a duplicate.
 
@@ -24,8 +28,8 @@ The pack also includes Signal Lantern and Marshlight for the reading tutorial. T
 
 ## 3. Validate, publish and install
 
-1. Review the editor's diagnostics and resolve errors. Confirm the monster's Staff actions are present, not only its description.
-2. Review the release changes, enter a version newer than the project's previous release and release notes, and choose **Publish release**.
+1. Wait for **Saved** (or choose **Save now**), then choose **Validate on server** in Diagnostics. Resolve errors. Confirm the monster's Staff actions are present, not only its description.
+2. Open **Publish**, enter a new **Semantic version** (`0.1.0` for a fresh project) and **Release notes**, choose **Review changes**, then **Publish release** once validation allows it.
 3. Preview installing that release into your test campaign. Confirm the intended addition, then complete installation.
 
 A saved draft or published release alone does not change the campaign. Install the pack before creating the monster. See [campaign delivery](delivery.md#campaign-homebrew) for these stages.
@@ -70,7 +74,7 @@ If a button is absent or a formula differs, the exercise has not passed merely b
 For personal authoring, obtain your complete authorized SRD source export. A compiled snapshot is not source. With Node.js 22+:
 
 ```sh
-git clone https://github.com/outset-vtt/compendium-authoring-guide.git
+git clone --branch v0.3.1 --depth 1 https://github.com/outset-vtt/compendium-authoring-guide.git
 cd compendium-authoring-guide
 npm ci
 mkdir -p output
