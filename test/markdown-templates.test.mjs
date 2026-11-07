@@ -6,11 +6,11 @@ const directory = new URL('../examples/emberwatch/markdown/', import.meta.url);
 
 test('every Emberwatch Markdown template starts with a title, a Type line and a stable Id', async () => {
   const files = (await readdir(directory)).filter((file) => file.endsWith('.md')).sort();
-  assert.deepEqual(files, ['ashglass-scale.md', 'ashglass-sentinel.md', 'ashglass-warden.md', 'cinder-lash.md', 'cinderward-brooch.md', 'emberkin.md', 'emberwatch-wayfinder.md', 'watchfire-draught.md']);
+  assert.deepEqual(files, ['ashglass-scale.md', 'ashglass-sentinel.md', 'ashglass-warden.md', 'cinder-lash.md', 'cinderward-brooch.md', 'emberkin.md', 'emberwatch-wayfinder.md', 'watchfire-draught.md', 'watchfire-sentinel.md']);
   for (const file of files) {
     const text = await readFile(new URL(file, directory), 'utf8');
     assert.match(text, /^# .+\n/, `${file}: starts with a "# Title" heading`);
-    assert.match(text, /^- Type: (Monster|Species|Background|Magic item|Item|Weapon|Armor|Consumable|Potion)$/m, `${file}: declares a supported Type`);
+    assert.match(text, /^- Type: (Monster|Species|Background|Magic item|Item|Weapon|Armor|Consumable|Potion|Feat)$/m, `${file}: declares a supported Type`);
     const id = /^- Id: ([a-z0-9-]+)$/m.exec(text);
     assert.ok(id, `${file}: declares an Id`);
     assert.equal(`${id[1]}.md`, file, `${file}: the file is named after its Id`);

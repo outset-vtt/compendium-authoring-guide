@@ -13,8 +13,9 @@ The complete Emberwatch set is in [examples/emberwatch/markdown](../examples/emb
 broader templates: [Ashglass Warden](../examples/emberwatch/markdown/ashglass-warden.md)
 (legendary monster with recharge breath, saves, areas and a grapple),
 [Cinder Lash](../examples/emberwatch/markdown/cinder-lash.md) (weapon),
-[Ashglass Scale](../examples/emberwatch/markdown/ashglass-scale.md) (armor) and
-[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion).
+[Ashglass Scale](../examples/emberwatch/markdown/ashglass-scale.md) (armor),
+[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion) and
+[Watchfire Sentinel](../examples/emberwatch/markdown/watchfire-sentinel.md) (feat).
 Download one, change it, and import it. The [JSON pack](../examples/emberwatch/source/pack.json)
 remains the same content in its raw form.
 
@@ -76,7 +77,7 @@ A volcanic-glass pin remembers the warmth of the old watchfires.
 - `# Title` starts an entry; one file may hold several. Text before the first
   heading is an error.
 - `- Type:` is required: `Monster`, `Species`, `Background`, `Magic item`,
-  `Item`, `Weapon`, `Armor`, `Consumable` or `Potion`.
+  `Item`, `Weapon`, `Armor`, `Consumable`, `Potion` or `Feat`.
 - `- Id:` is the stable identity. Keep it when you rename a title or a file.
   Without it the title's slug is used. `Source` and `Attribution` are recorded.
 - `## Kind: Name` sections hold mechanics: `Action`, `Bonus action`, `Reaction`,
@@ -107,6 +108,7 @@ with the closest spellings. Equipment accepts `5 Torches` and coins such as
 | Item | `Category` (plain items), `Rarity`, `Requires attunement`, `Equipment slot`, `Charges`, `Recharge` (`All charges at dawn`, `1d4 charges at dawn`, `Long rest`, `Short rest`, `Never`), `Weight`, `Cost` | `Passive` with `Requires: Carried / Equipped / Attuned / Equipped and attuned` and `Effect: +1 Armor Class`; `Action`, `Bonus action`, `Reaction` with `Requires`, `Cost: 1 charge`, `Target`, `Range`, `Effect`, or `Attack` and `Hit`; `Consumed: Yes` spends one of the item |
 | Weapon | `Damage: 1d8 slashing`, `Properties` (Finesse, Versatile (1d10), Two-Handed, Ammunition, the rest as text), `Range: 80/320 feet`, `Weapon category: Simple / Martial`, `Weight`, `Cost` | None needed: attack and damage steps use the wielder's Strength, or Dexterity for ranged and Finesse weapons, plus proficiency; Versatile adds a two-handed damage step |
 | Armor | `Armor Class: 16`, `14 + Dex (max 2)`, `11 + Dex`, or `+2` for a shield; `Armor category`, `Strength requirement`, `Stealth: Disadvantage`, `Weight`, `Cost` | None needed: the equipped AC effect, body or off-hand placement and Stealth modifier match the SRD armor |
+| Feat | `Category: Origin / General / Fighting Style / Epic Boon`, `Prerequisite` (shown, never checked), `Repeatable`, `Ability score increase: +1 Wisdom or Constitution` (recorded; applied by hand when taken) | `Passive` with `Effect: +2 to ranged weapon attack rolls`, `+1d4 to weapon damage rolls`, `+1 to saving throws`, `Advantage on Perception checks` or `+1 Armor Class` (carried roll modifiers); action sections become the feature's steps; `Trait` stays text. Backgrounds and species grant it by name. |
 | Consumable / Potion | `Rarity`, `Weight`, `Cost` | `Action` or `Bonus action` with `Effect: Regain 2d4 + 2 hit points` (a healing roll that spends one of the item) or the other action fields |
 
 Effect phrases: `Gain N temporary hit points` (keeps the higher total, never
