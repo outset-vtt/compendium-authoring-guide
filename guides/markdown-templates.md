@@ -9,7 +9,12 @@ The complete Emberwatch set is in [examples/emberwatch/markdown](../examples/emb
 [Ashglass Sentinel](../examples/emberwatch/markdown/ashglass-sentinel.md),
 [Emberkin](../examples/emberwatch/markdown/emberkin.md),
 [Emberwatch Wayfinder](../examples/emberwatch/markdown/emberwatch-wayfinder.md) and
-[Cinderward Brooch](../examples/emberwatch/markdown/cinderward-brooch.md).
+[Cinderward Brooch](../examples/emberwatch/markdown/cinderward-brooch.md), plus the
+broader templates: [Ashglass Warden](../examples/emberwatch/markdown/ashglass-warden.md)
+(legendary monster with recharge breath, saves, areas and a grapple),
+[Cinder Lash](../examples/emberwatch/markdown/cinder-lash.md) (weapon),
+[Ashglass Scale](../examples/emberwatch/markdown/ashglass-scale.md) (armor) and
+[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion).
 Download one, change it, and import it. The [JSON pack](../examples/emberwatch/source/pack.json)
 remains the same content in its raw form.
 
@@ -70,7 +75,8 @@ A volcanic-glass pin remembers the warmth of the old watchfires.
 
 - `# Title` starts an entry; one file may hold several. Text before the first
   heading is an error.
-- `- Type:` is required: `Monster`, `Species`, `Background`, `Magic item` or `Item`.
+- `- Type:` is required: `Monster`, `Species`, `Background`, `Magic item`,
+  `Item`, `Weapon`, `Armor`, `Consumable` or `Potion`.
 - `- Id:` is the stable identity. Keep it when you rename a title or a file.
   Without it the title's slug is used. `Source` and `Attribution` are recorded.
 - `## Kind: Name` sections hold mechanics: `Action`, `Bonus action`, `Reaction`,
@@ -95,10 +101,13 @@ with the closest spellings. Equipment accepts `5 Torches` and coins such as
 
 | Type | Entry fields | Sections |
 | --- | --- | --- |
-| Monster | `Size`, `Creature type`, `Alignment`, `Armor Class`, `Hit Points` (`39 (6d8 + 12)`), `Speed`, six ability scores as fields or a `STR … CHA` table, `Saving throws` (`Constitution +4`), `Skills` (`Perception +3`), `Senses` (Darkvision, Blindsight, Tremorsense, Truesight ranges execute; passive scores are manual), `Languages` (manual), `Challenge`, `Proficiency bonus` | `Attack: Melee, +5 to hit, reach 5 feet, one target` with `Hit: 1d8 + 3 piercing damage`; or `Target` and `Effect` |
+| Monster | `Size`, `Creature type`, `Alignment`, `Armor Class`, `Hit Points` (`39 (6d8 + 12)`), `Speed`, six ability scores as fields or a `STR … CHA` table, `Saving throws` (`Constitution +4`), `Skills` (`Perception +3`), `Senses` (Darkvision, Blindsight, Tremorsense, Truesight ranges execute; passive scores are manual), `Languages` (manual), `Challenge`, `Proficiency bonus`, `Legendary actions: 2`, `Legendary resistance: 2/Day` | `Attack: Melee, +5 to hit, reach 5 feet, one target` with `Hit: 1d8 + 3 piercing damage` and optional `On hit: Grappled (escape DC 16)`; or `Save: Dexterity 15, half damage on a success` with `Hit` and optional `Area: 30-foot line, 5 feet wide`; or `Target` and `Effect`. `Uses: 2/Day`, `Uses: Recharge 5-6` or `Uses: Recharge after a Short or Long Rest` on up to two actions. `## Legendary action:` sections spend a legendary use. |
 | Species | `Size`, `Speed`, `Darkvision`; `Spell`, `Skill proficiency`, `Feat` | `Trait` with `Hit point maximum: +1 per level` or grants; `Choice` with `Choose`, `Spellcasting ability` and `Option` children granting `Spell`, `Skill proficiency`, `Feat`, `Speed`, `Darkvision` |
 | Background | `Ability scores`, `Skill proficiencies`, `Tool proficiencies`, `Feat`, `Equipment` | `Trait` (manual text) |
-| Item | `Category` (plain items), `Rarity`, `Requires attunement`, `Equipment slot`, `Charges`, `Recharge` (`All charges at dawn`, `1d4 charges at dawn`, `Long rest`, `Short rest`, `Never`), `Weight` | `Passive` with `Requires: Carried / Equipped / Attuned / Equipped and attuned` and `Effect: +1 Armor Class`; `Action`, `Bonus action`, `Reaction` with `Requires`, `Cost: 1 charge`, `Target`, `Range`, `Effect`, or `Attack` and `Hit` |
+| Item | `Category` (plain items), `Rarity`, `Requires attunement`, `Equipment slot`, `Charges`, `Recharge` (`All charges at dawn`, `1d4 charges at dawn`, `Long rest`, `Short rest`, `Never`), `Weight`, `Cost` | `Passive` with `Requires: Carried / Equipped / Attuned / Equipped and attuned` and `Effect: +1 Armor Class`; `Action`, `Bonus action`, `Reaction` with `Requires`, `Cost: 1 charge`, `Target`, `Range`, `Effect`, or `Attack` and `Hit`; `Consumed: Yes` spends one of the item |
+| Weapon | `Damage: 1d8 slashing`, `Properties` (Finesse, Versatile (1d10), Two-Handed, Ammunition, the rest as text), `Range: 80/320 feet`, `Weapon category: Simple / Martial`, `Weight`, `Cost` | None needed: attack and damage steps use the wielder's Strength, or Dexterity for ranged and Finesse weapons, plus proficiency; Versatile adds a two-handed damage step |
+| Armor | `Armor Class: 16`, `14 + Dex (max 2)`, `11 + Dex`, or `+2` for a shield; `Armor category`, `Strength requirement`, `Stealth: Disadvantage`, `Weight`, `Cost` | None needed: the equipped AC effect, body or off-hand placement and Stealth modifier match the SRD armor |
+| Consumable / Potion | `Rarity`, `Weight`, `Cost` | `Action` or `Bonus action` with `Effect: Regain 2d4 + 2 hit points` (a healing roll that spends one of the item) or the other action fields |
 
 Effect phrases: `Gain N temporary hit points` (keeps the higher total, never
 stacks) and `Regain N hit points`. Anything else needs clarification; move it
