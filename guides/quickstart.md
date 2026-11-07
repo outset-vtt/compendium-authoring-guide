@@ -4,7 +4,7 @@ Create **Reed Warden**, an original SRD-based monster, then roll its Staff attac
 
 You need an [Outset account](https://app.outset-vtt.gg/) with DM access to a private test campaign using D&D SRD 5.2.1. This route uses the campaign editor; no agent or local command-line tools are required.
 
-Today, this tutorial adds structured JSON through the editor. Plain-prose Markdown import is not available through this workflow.
+This tutorial adds structured JSON through the editor. To author with plain Markdown instead, see [Markdown templates](markdown-templates.md); free-form prose is still not interpreted.
 
 ## 1. Create a campaign extension
 
