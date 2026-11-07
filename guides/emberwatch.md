@@ -16,9 +16,12 @@ movement. Emberkin uses `structured.kind: "race"` and `structured.speed: 35`.
 Likewise, an item description saying “requires attunement” does not gate its action.
 The brooch declares its passive gate and activation requirement separately.
 
-Use the visual fields when available. When a nested field is not exposed in the
-visual editor, edit that entry's Advanced JSON or the project Source and validate
-it. This guide does not claim every supported field has a visual control.
+Use the visual fields when available. Outset releases that include the
+**Spellcasting abilities** control can author every Emberkin field visually; see
+[author Emberkin visually](#author-emberkin-visually). When a nested field is not
+exposed in your release's visual editor, edit that entry's Advanced JSON or the
+project Source and validate it. This guide does not claim every supported field
+has a visual control.
 
 ## Ashglass Sentinel: monster import and effects
 
@@ -59,6 +62,32 @@ Even though Spark is the only option, the player must choose the spellcasting
 ability. Fire Bolt's attack and save numbers use that choice rather than the
 class's casting ability. With Wisdom 13 and proficiency +2, expect spell attack
 +3 and save DC 11. This cantrip does not need a limited free-cast resource.
+
+### Author Emberkin visually
+
+In an Outset release with the **Spellcasting abilities** control, open the
+entry's **Visual editor**, add **Structured** and set its kind to `race`. Then
+use **Add setting** and the list buttons:
+
+1. Set **Speed** to `35` and add `Medium` under **Size Options**.
+2. Add **Darkvision (feet)** and enter `60`.
+3. Add **Hit Points per level**: **Hit Points per character level** `1`, **Label**
+   `Banked Ember`.
+4. Add **Choice Groups**, then **Add Choice group**: ID `ember-gift`, Label
+   `Ember Gift`, Count `1`.
+5. In the group, open **Options** and **Add Option**: ID `spark`, Label `Spark`.
+   Add **Grants** with Label `Ember Gift`, then **Spells** and **Add Spell grant**:
+   Entry ID `fire-bolt`, Pack ID `dnd-srd-5-2-1-spells`, Character Level `1`.
+6. Add **Spellcasting abilities** to the group and check Intelligence, Wisdom
+   and Charisma. The checkboxes list the base's ability scores.
+
+Validation names the exact field for an empty or repeated spellcasting-ability
+list, an ID the base lacks, Hit Points per level below 1, or a negative
+Darkvision range. In a personal compendium, **Save version** refuses those
+errors. In a campaign extension, the **Publish** section's **Review changes** and
+**Publish release** run the same checks, and **Install release** puts the
+validated version into the campaign. A saved draft or personal version is not a
+campaign installation.
 
 The pack uses its own `ember-gift` and `spark` IDs. Do not borrow built-in Human
 choice IDs to make custom species work. Current typed species grants also support
