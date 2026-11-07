@@ -1,12 +1,24 @@
 # Emberwatch: four integrated homebrew examples
 
+## Overview
+
 Original content for Outset's **D&D SRD 5.2.1**. The [source pack](source/pack.json)
 adds a monster, species, background and charged magic item without replacing the
 base. Pack version **0.2.0** updates the October 24 audit example with typed tool
 proficiency, an explicit item activation requirement, and a wearable placement.
 Monster CR and item rarity are illustrative, not a balance certification.
 
-## What this pack does
+## Files
+
+| Path | Purpose |
+| --- | --- |
+| [source/pack.json](source/pack.json) | Additive editable rules pack |
+| [review.md](review.md) | Reviewed behavior, evidence and limitations |
+| [verification.json](verification.json) | Recorded engine results and source hash, scoped to the revision it names |
+
+No reading edition or compiled snapshot is supplied. See the [example layout](../README.md#example-layout) for optional files.
+
+## Automated and manual behavior
 
 | Entry | Executable behavior in the reviewed build | Manual responsibility or limitation |
 | --- | --- | --- |
@@ -20,7 +32,21 @@ behavior and gives a reproducible editor/gameplay checklist. The [review](review
 records tested revisions, expected results and remaining limitations. These are
 scoped observations, not a promise that every later release behaves identically.
 
-## Start from the complete SRD
+## Requirements
+
+Keep the complete SRD base. These are the entries this pack references directly:
+
+| Base pack ID | Entry IDs | Use |
+| --- | --- | --- |
+| `dnd-srd-5-2-1-spells` | `fire-bolt` | Ember Gift |
+| `dnd-srd-5-2-1-character-options` | `alert` | Wayfinder origin feat |
+| `dnd-srd-5-2-1-equipment` | `cartographer-s-tools`, `clothes-traveler-s`, `rope`, `torch` | Tool proficiency and starting equipment |
+
+The pack also relies on the SRD character/monster profiles, `hp`, `armorClass`,
+ability modifiers, proficiency, and the `neck` equipment slot. Do not copy these
+fields into an unrelated system and assume the same IDs exist.
+
+## Use in Outset
 
 For personal authoring, copy the published SRD through **Create or edit
 compendiums**, then append this pack to `compendiumPacks` in the full source.
@@ -43,21 +69,7 @@ For a campaign, create an extension against its installed SRD and add this pack
 there. Preserve the extension's actual base revision and release provenance.
 Saving a personal version is not a campaign installation. See [delivery](../../guides/delivery.md).
 
-## Required base references
-
-Keep the complete SRD base. These are the entries this pack references directly:
-
-| Base pack ID | Entry IDs | Use |
-| --- | --- | --- |
-| `dnd-srd-5-2-1-spells` | `fire-bolt` | Ember Gift |
-| `dnd-srd-5-2-1-character-options` | `alert` | Wayfinder origin feat |
-| `dnd-srd-5-2-1-equipment` | `cartographer-s-tools`, `clothes-traveler-s`, `rope`, `torch` | Tool proficiency and starting equipment |
-
-The pack also relies on the SRD character/monster profiles, `hp`, `armorClass`,
-ability modifiers, proficiency, and the `neck` equipment slot. Do not copy these
-fields into an unrelated system and assume the same IDs exist.
-
-## Validation levels
+## Verification
 
 1. **Portable repository checks:** `npm test` verifies import preparation without
    replacing the base; `npm run check:links` checks local Markdown links.
@@ -70,6 +82,8 @@ fields into an unrelated system and assume the same IDs exist.
    [checklist](../../guides/emberwatch.md#verify-in-a-private-campaign), including
    blocked actions, resource changes and reload. Compilation alone cannot prove
    those results.
+
+## License and provenance
 
 No private account data, SRD source export, artwork, campaign installation or
 reading-edition snapshot is included. Original example content is MIT licensed;

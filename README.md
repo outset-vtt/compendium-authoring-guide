@@ -18,6 +18,8 @@ Start with a private test campaign for playable examples. For a personal charact
 
 ## Pick an example
 
+Browse the [example catalog and standard layout](examples/README.md).
+
 | Example | Best for | What to expect |
 | --- | --- | --- |
 | [Lantern Marsh](examples/lantern-marsh/README.md) | First monster and readable books | Reed Warden has executable Staff rolls. Signal Lantern and Marshlight demonstrate prose and reading editions; their effects remain manual. |
@@ -54,7 +56,7 @@ npm run check:links
 
 ## Versions, contributions and reuse
 
-This is the development guide on `main`. Use [tagged releases](https://github.com/outset-vtt/compendium-authoring-guide/releases) for fixed snapshots; newer examples on `main` may not be in the latest tag. The tooling package is version **0.2.0**, targets SRD **5.2.1**, and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
+This is the development guide on `main`. The [0.3.0 release](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.3.0) includes both examples, the executable quickstart and standardized example navigation. Download **Source code (zip)** for the complete guide and runnable local checks. The tooling package is version **0.3.0**, targets SRD **5.2.1**, and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
 
 Preserve the SRD-first workflow and run the checks above before contributing. See [parser provenance](lib/README.md) before changing validation semantics.
 
