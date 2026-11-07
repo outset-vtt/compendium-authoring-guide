@@ -4,7 +4,7 @@ version: "0.0.1"
 id: "lantern-marsh-introduction"
 title: "Lantern Marsh"
 sourcePacks:
-  lantern-marsh-core: "pack-d61f9b0a719dcb1e"
+  lantern-marsh-core: "pack-15ea74de7247ba50"
 source: "Lantern Marsh, first edition"
 attribution: "Original Outset VTT example content, MIT license. No third-party rules text."
 ---

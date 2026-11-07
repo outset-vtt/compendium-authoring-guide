@@ -4,7 +4,7 @@ version: "0.0.1"
 id: "lantern-marsh-monster-reed-warden"
 title: "Reed Warden"
 entry: "lantern-marsh-core:monster:reed-warden"
-sourceHash: "entry-0a1114bd71e961e0"
+sourceHash: "entry-525868512e0f4c86"
 source: "Lantern Marsh, first edition"
 attribution: "Original Outset VTT example content, MIT license. No third-party rules text."
 ---
