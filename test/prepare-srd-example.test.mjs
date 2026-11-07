@@ -23,14 +23,18 @@ test('wrong systems, editions, wrappers and pack collisions are rejected',()=>{
   for(const input of [{...base,system:{...base.system,id:'custom'}},{...base,system:{...base.system,version:'other'}},{...base,kind:'extension-bundle'},{document:base},[base],{...base,compendiumPacks:[pack]}]) assert.throws(()=>appendSrdPack(input,pack));
   assert.throws(()=>appendSrdPack(base,{...pack,systemId:'custom'}));
 });
-test('CLI creates only a new output and never overwrites one',async()=>{
+for (const example of ['lantern-marsh', 'emberwatch']) test(`CLI prepares ${example}, preserves the base, and never overwrites output`,async()=>{
   const dir=await mkdtemp(join(tmpdir(),'outset-srd-source-'));
   try {
     const input=join(dir,'source.json'),output=join(dir,'out.json');await writeFile(input,JSON.stringify(base));
     const cli=fileURLToPath(new URL('../scripts/prepare-srd-example.mjs',import.meta.url));
-    execFileSync(process.execPath,[cli,input,output]);const first=await readFile(output,'utf8');
-    assert.equal(JSON.parse(first).compendiumPacks.at(-1).id,pack.id);
-    assert.throws(()=>execFileSync(process.execPath,[cli,input,output],{stdio:'pipe'}));
+    const selectedPath=fileURLToPath(new URL(`../examples/${example}/source/pack.json`,import.meta.url));
+    const selected=JSON.parse(await readFile(selectedPath,'utf8'));
+    const args=[cli,input,output,...(example==='lantern-marsh'?[]:[selectedPath])];
+    execFileSync(process.execPath,args);const first=await readFile(output,'utf8');
+    assert.deepEqual(JSON.parse(first),{...base,compendiumPacks:[...base.compendiumPacks,selected]});
+    assert.equal(await readFile(input,'utf8'),JSON.stringify(base));
+    assert.throws(()=>execFileSync(process.execPath,args,{stdio:'pipe'}));
     assert.equal(await readFile(output,'utf8'),first);
   } finally {await rm(dir,{recursive:true,force:true});}
 });
