@@ -28,8 +28,24 @@ The source pack SHA-256 was `b71c5c1852df9a749885a47503ac5fcfd3bb8c9a9f78e519271
 
 The install preview allowed confirmation and returned no warnings or diagnostics, but installation failed. A fresh read-only preview still returned `canInstall: true`. Both its current and target revisions were `rules-109bb5ab008999e8`. The cause has not been established; the preview's success must not be treated as proof that the release installed.
 
+## Production rerun: November 8, 2026
+
+Outset fixed the installation failure, and the corrected Lantern Marsh pack lets Staff Attack and Staff Damage roll without a selected target. The route was repeated in a new private production campaign on application revision `85a002b8`.
+
+| Stage | Result | Evidence and limit |
+| --- | --- | --- |
+| Adopt the campaign's installed rules snapshot | Passed | Base system and base release provenance were kept |
+| Add the Lantern Marsh pack | Passed | The current pack on `main` was added to `compendiumPacks` through the draft save; no diagnostics |
+| Publish a private release | Passed | Version 0.1.0 |
+| Install the release | Passed | “Campaign rules updated to 0.1.0” |
+| Create Reed Warden | Passed | Created from the installed entry: Medium Humanoid, AC 12, HP 9/9, Speed 30 feet, STR 10, DEX 14, CON 10, INT 10, WIS 12, CHA 10 |
+| Staff rolls without a target | Passed | Staff Attack `1d20+2` and Staff Damage `1d6` rolled from the action picker and the attack card |
+| Reload | Passed | Stats, both Staff actions and the rolls in the log persisted |
+
+The install preview listed every adopted base pack as a change, and the monster list showed SRD monsters twice. That is a known Outset issue and does not affect Reed Warden. The pack was added through the editor's save request rather than typed into the **JSON source** section, so that step of the written route was not exercised by hand.
+
 ## What remains
 
-Fix the production installation failure, then repeat installation in a private campaign and verify Reed Warden's AC 12, HP 9/9, Speed 30 feet, Staff Attack `1d20+2`, Staff Damage `1d6` Bludgeoning, and persistence after reload. Separately exercise fresh OAuth and each advertised host installation flow before claiming full onboarding coverage.
+Exercise fresh OAuth and each advertised host installation flow before claiming full onboarding coverage.
 
 The private reproduction campaign was retained. No original releases or existing campaign/character data were changed, and no paid generation was started. Private campaign identifiers and screenshots are deliberately excluded from this public record.

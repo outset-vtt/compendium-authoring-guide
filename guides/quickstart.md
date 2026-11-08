@@ -6,8 +6,6 @@ You need an [Outset account](https://app.outset-vtt.gg/) with DM access to a pri
 
 Today, this tutorial adds structured JSON through the editor. Plain-prose Markdown import is not available through this workflow.
 
-> **Current production blocker (November 7, 2026):** this route passed saving, server validation and private publication, but installation failed with “Installed rules do not match the pinned revision.” The monster creation and roll steps below remain unverified in that run. See the [first-use verification record](first-use-verification.md). If you encounter this error, stop before creating the monster; do not remove base provenance or treat publication as a successful installation.
-
 ## 1. Create a campaign extension
 
 Open your private test campaign. Use the top-left **Campaign** menu, choose **Manage campaign**, select **Rules**, then **Import into Rules Studio**. The built-in SRD initially opens read-only.
