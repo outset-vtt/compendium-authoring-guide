@@ -16,6 +16,19 @@ movement. Emberkin uses `structured.kind: "race"` and `structured.speed: 35`.
 Likewise, an item description saying “requires attunement” does not gate its action.
 The brooch declares its passive gate and activation requirement separately.
 
+The SRD's own species keep source facts in `data.species` (`speed.walk`,
+`darkvision.range`, `sizeOptions`), and Outset derives their `structured` fields
+when it builds the SRD. It derives nothing for your species: one with only that
+source shape compiles to `{ "kind": "race" }`, and characters get the default
+Speed and no Darkvision. Rules Studio warns about exactly this case. Each
+documented source value without its `structured` field (`speed`,
+`darkvisionRangeFeet` or `sizeOptions`) gets a warning at that field, naming the
+value to set. Selecting it in Diagnostics opens the field, or an Add control
+when the field or Structured itself is missing. Warnings never block saving,
+nothing is copied for you, and setting the field clears only its warning. A
+typed value that differs from the source is kept as the mechanic. Prose and
+other `data` keys are not checked.
+
 Use the visual fields when available. Outset releases that include the
 **Spellcasting abilities** control can author every Emberkin field visually; see
 [author Emberkin visually](#author-emberkin-visually). When a nested field is not
