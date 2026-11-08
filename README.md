@@ -9,6 +9,7 @@ Build playable monsters, items, species and backgrounds on Outset's **D&D SRD 5.
 | Your goal | Start here | Result |
 | --- | --- | --- |
 | Make a monster with working rolls | [Reed Warden quickstart](guides/quickstart.md) | A campaign monster with HP, Staff Attack and Staff Damage |
+| Write content as plain Markdown | [Markdown templates](guides/markdown-templates.md) | Import, review automated / needs clarification / manual mechanics, export |
 | Make a charged magic item | [Cinderward Brooch](guides/emberwatch.md) | Gated AC, activation requirements, charges and Temporary HP |
 | Make a species or background | [Emberwatch walkthrough](guides/emberwatch.md) | Spell choices, Darkvision, HP per level, skills, tool proficiency and equipment |
 | Format a readable compendium or book | [Reading editions](guides/reading-editions.md) | Linked Markdown documents and ordered chapters; currently application-bundled |

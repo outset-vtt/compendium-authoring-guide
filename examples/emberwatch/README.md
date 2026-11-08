@@ -15,6 +15,7 @@ Monster CR and item rarity are illustrative, not a balance certification.
 | [source/pack.json](source/pack.json) | Additive editable rules pack |
 | [review.md](review.md) | Reviewed behavior, evidence and limitations |
 | [verification.json](verification.json) | Recorded engine results and source hash, scoped to the revision it names |
+| [markdown/](markdown) | The same four entries as template Markdown; import one through **Import Markdown** |
 
 No reading edition or compiled snapshot is supplied. See the [example layout](../README.md#example-layout) for optional files.
 
@@ -47,6 +48,8 @@ ability modifiers, proficiency, and the `neck` equipment slot. Do not copy these
 fields into an unrelated system and assume the same IDs exist.
 
 ## Use in Outset
+
+The quickest path is Markdown: open **Import Markdown** on a pack in your personal compendium or campaign extension, paste one of the [templates](markdown), review the mechanics and add it. See [Markdown templates](../../guides/markdown-templates.md).
 
 For personal authoring, copy the published SRD through **Create or edit
 compendiums**, then append this pack to `compendiumPacks` in the full source.

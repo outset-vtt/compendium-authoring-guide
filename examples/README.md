@@ -28,6 +28,7 @@ Optional files are included only when the example supplies them:
 | `editions/*.publication.md` | Markdown reading editions, not executable mechanics | Lantern Marsh |
 | `editions/*.book.md` | Book order and document references | Lantern Marsh |
 | `verification.json` | Recorded engine results with revision, source hash and scope | Emberwatch |
+| `markdown/*.md` | Template Markdown for each entry, importable through Rules Studio | Emberwatch |
 
 Keep editable JSON under `source/`; keep reading editions under `editions/`. Each README uses the same section order so readers can find capabilities, prerequisites and verification without learning a new layout. Preserve stable pack and entry IDs when reorganizing files.
 

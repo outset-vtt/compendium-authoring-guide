@@ -4,6 +4,8 @@ Use the complete [Emberwatch pack](../examples/emberwatch/source/pack.json) with
 an Outset SRD 5.2.1 project. The [example README](../examples/emberwatch/README.md)
 covers import, required references and current manual boundaries.
 
+Prefer not to edit JSON? The same four entries exist as [Markdown templates](../examples/emberwatch/markdown) you can import directly; see [Markdown templates](markdown-templates.md).
+
 ## Source text and executable fields
 
 `data.description` is the readable rule. It is not an instruction to the engine.
