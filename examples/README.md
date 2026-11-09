@@ -1,15 +1,14 @@
 # Authoring examples
 
-Choose an example, read its capability table, then follow its **Use in Outset** section. Both examples extend Outset's complete D&D SRD 5.2.1 base. Neither `source/pack.json` is a complete system import.
+Read the example's capability table, then follow its **Use in Outset** section. The example extends Outset's complete D&D SRD 5.2.1 base; its `source/pack.json` is not a complete system import.
 
 | Example | Contents | Start here |
 | --- | --- | --- |
-| [Lantern Marsh](lantern-marsh/README.md) | Monster with Staff rolls; descriptive item and spell; Markdown reading editions | [First playable monster](../guides/quickstart.md) |
-| [Emberwatch](emberwatch/README.md) | Monster, species, background and charged wearable item | [Integrated mechanics walkthrough](../guides/emberwatch.md) |
+| [Barrowdale](barrowdale/README.md) | A goblin, a legendary barrow wight, a species, a background, a charged amulet, a weapon, armor, a potion, a feat and three spells as Markdown templates and a JSON pack, with reading editions for four of them | [First playable monster](../guides/quickstart.md), then the [walkthrough](../guides/barrowdale.md) |
 
 ## Example layout
 
-Every example uses these paths:
+The example uses these paths:
 
 ```text
 <example>/
@@ -19,18 +18,18 @@ Every example uses these paths:
     pack.json        # Editable additive rules pack
 ```
 
-Optional files are included only when the example supplies them:
+Optional files are included when the example supplies them; Barrowdale supplies all of them:
 
-| Path | Purpose | Supplied by |
-| --- | --- | --- |
-| `source/compiled-packs.json` | Snapshot for document validation, not editable source | Lantern Marsh |
-| `source/*.md` | Original reference-chapter source | Lantern Marsh |
-| `editions/*.publication.md` | Markdown reading editions, not executable mechanics | Lantern Marsh |
-| `editions/*.book.md` | Book order and document references | Lantern Marsh |
-| `verification.json` | Recorded engine results with revision, source hash and scope | Emberwatch |
-| `markdown/*.md` | Template Markdown for each entry, importable through Rules Studio | Emberwatch |
+| Path | Purpose |
+| --- | --- |
+| `markdown/*.md` | Template Markdown for each entry, importable through Rules Studio; the source of the JSON pack |
+| `source/compiled-packs.json` | Snapshot for document validation, not editable source |
+| `source/*.md` | Original reference-chapter source |
+| `editions/*.publication.md` | Markdown reading editions, not executable mechanics |
+| `editions/*.book.md` | Book order and document references |
+| `verification.json` | Recorded engine results with revision, source hash and scope |
 
-Keep editable JSON under `source/`; keep reading editions under `editions/`. Each README uses the same section order so readers can find capabilities, prerequisites and verification without learning a new layout. Preserve stable pack and entry IDs when reorganizing files.
+Keep editable JSON under `source/`; keep reading editions under `editions/`. The README uses a fixed section order so readers can find capabilities, prerequisites and verification without learning a new layout. Preserve stable pack and entry IDs when reorganizing files.
 
 ## What a release proves
 

@@ -11,6 +11,6 @@ Start from the selected SRD 5.2.1 source and your separately identified homebrew
 7. Record formatting repairs separately from corrections, unresolved contradictions, and editorial additions. If reconstruction is uncertain, preserve readable source prose and record the gap.
 8. Re-review after source changes. Replacing a hash alone is not review.
 
-Use the [Lantern Marsh review record](../examples/lantern-marsh/review.md) as a compact model. It identifies the frozen sources, exact retained facts, deliberate presentation changes, and limitations. Attribution and redistribution rights remain attached to source material; these original examples contain no third-party rules text.
+Use the [Barrowdale review record](../examples/barrowdale/review.md) as a compact model. It identifies the frozen sources, exact retained facts, deliberate presentation changes, and limitations. Attribution and redistribution rights remain attached to source material; these original examples contain no third-party rules text.
 
 For SRD-based homebrew, review action economy, attack/save conventions, recharge timing, spell metadata, and inherited field identities. Do not carry an unrelated mini-system attribute into an SRD creature. Preserve the SRD source and attribution when adapting its actual text; label original additions separately.

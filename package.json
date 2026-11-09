@@ -1,6 +1,6 @@
 {
   "name": "outset-compendium-authoring-guide",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "check:reading-examples": "node scripts/validate-publications.mjs examples/lantern-marsh/editions --snapshot examples/lantern-marsh/source/compiled-packs.json",
+    "check:reading-examples": "node scripts/validate-publications.mjs examples/barrowdale/editions --snapshot examples/barrowdale/source/compiled-packs.json",
     "test": "node --test",
     "check:links": "python3 scripts/check-links.py",
     "prepare:example": "node scripts/prepare-srd-example.mjs",

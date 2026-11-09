@@ -1,5 +1,7 @@
 # First-use verification: November 7, 2026
 
+> **Note (November 9, 2026):** the examples were renamed after this record. The Lantern Marsh pack and its Reed Warden described below were replaced by [Barrowdale](../examples/barrowdale/README.md) and its Goblin Raider. This record is kept as it was written; the links to the previous pack no longer resolve to a file in this repository. Barrowdale has not yet been rerun on production.
+
 This record covers the 0.3.1 guide and skill release candidate. It is **not a complete end-to-end pass**. Testing used a fresh private production campaign and an existing authenticated account; it did not repeat account registration or OAuth consent.
 
 ## Results
@@ -22,7 +24,7 @@ Codex discovery did not invoke a model or execute a skill. None of these checks 
 
 Both production web and realtime images identified revision `64851f79fb72ab29f91a05f63306ea8bbb02fd7e`; web reported 2/2 ready and realtime 3/3 ready when checked.
 
-Follow the [quickstart](quickstart.md) through publication. The test created a rules project using **Adopt the campaign's installed rules snapshot**, preserved its base provenance and existing packs, and added the original [Lantern Marsh pack](../examples/lantern-marsh/source/pack.json). The adopted source was large because it included the existing SRD packs.
+Follow the [quickstart](quickstart.md) through publication. The test created a rules project using **Adopt the campaign's installed rules snapshot**, preserved its base provenance and existing packs, and added the original Lantern Marsh pack (since replaced by Barrowdale). The adopted source was large because it included the existing SRD packs.
 
 The source pack SHA-256 was `b71c5c1852df9a749885a47503ac5fcfd3bb8c9a9f78e519271c53addcc3a6bc`.
 

@@ -18,7 +18,7 @@ Validation, publication of a release, installation preview, and installation are
 
 Optional `*.publication.md` files and `*.book.md` outlines format your source for reading. They currently ship as application-bundled content. Importing SRD-based source JSON does not install adjacent Markdown, and this repository does not provide a remote reading-edition installer.
 
-Deliver reading files with their source pack, authoritative compiled snapshots, and a review note. The included snapshot contains only the original example pack compiled against the SRD. Obtain compiled SRD packs too when a document binds or references them. If your authorized export surface does not supply the required compiled packs, leave source-bound validation pending rather than inventing hashes.
+Deliver reading files with their source pack, authoritative compiled snapshots, and a review note. The included snapshot contains only the Barrowdale pack compiled against the SRD. Obtain compiled SRD packs too when a document binds or references them. If your authorized export surface does not supply the required compiled packs, leave source-bound validation pending rather than inventing hashes.
 
 ## Sharing files
 

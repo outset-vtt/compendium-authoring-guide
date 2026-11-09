@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { appendSrdPack } from '../scripts/prepare-srd-example.mjs';
-const pack = JSON.parse(await readFile(new URL('../examples/lantern-marsh/source/pack.json', import.meta.url),'utf8'));
+const pack = JSON.parse(await readFile(new URL('../examples/barrowdale/source/pack.json', import.meta.url),'utf8'));
 // Structural test double only. This is not a distributable SRD source.
 const base = {system:{schemaVersion:3,id:'dnd-srd-5-2-1',version:'5.2.1',actors:[{id:'existing'}]},modules:[{id:'existing-module'}],compendiumPacks:[{id:'existing-pack',entries:[{id:'retained'}]}],sourceData:{notice:'Keep the original notice.'}};
 test('appending preserves the base and every existing pack, module, and source field',()=>{
@@ -23,14 +23,14 @@ test('wrong systems, editions, wrappers and pack collisions are rejected',()=>{
   for(const input of [{...base,system:{...base.system,id:'custom'}},{...base,system:{...base.system,version:'other'}},{...base,kind:'extension-bundle'},{document:base},[base],{...base,compendiumPacks:[pack]}]) assert.throws(()=>appendSrdPack(input,pack));
   assert.throws(()=>appendSrdPack(base,{...pack,systemId:'custom'}));
 });
-for (const example of ['lantern-marsh', 'emberwatch']) test(`CLI prepares ${example}, preserves the base, and never overwrites output`,async()=>{
+for (const example of ['barrowdale', 'barrowdale-by-path']) test(`CLI prepares ${example}, preserves the base, and never overwrites output`,async()=>{
   const dir=await mkdtemp(join(tmpdir(),'outset-srd-source-'));
   try {
     const input=join(dir,'source.json'),output=join(dir,'out.json');await writeFile(input,JSON.stringify(base));
     const cli=fileURLToPath(new URL('../scripts/prepare-srd-example.mjs',import.meta.url));
-    const selectedPath=fileURLToPath(new URL(`../examples/${example}/source/pack.json`,import.meta.url));
+    const selectedPath=fileURLToPath(new URL('../examples/barrowdale/source/pack.json',import.meta.url));
     const selected=JSON.parse(await readFile(selectedPath,'utf8'));
-    const args=[cli,input,output,...(example==='lantern-marsh'?[]:[selectedPath])];
+    const args=[cli,input,output,...(example==='barrowdale'?[]:[selectedPath])];
     execFileSync(process.execPath,args);const first=await readFile(output,'utf8');
     assert.deepEqual(JSON.parse(first),{...base,compendiumPacks:[...base.compendiumPacks,selected]});
     assert.equal(await readFile(input,'utf8'),JSON.stringify(base));

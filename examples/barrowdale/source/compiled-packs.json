@@ -1,0 +1,2265 @@
+[
+  {
+    "id": "barrowdale",
+    "name": "Barrowdale",
+    "systemId": "dnd-srd-5-2-1",
+    "version": "0.4.0",
+    "entries": [
+      {
+        "id": "goblin-raider",
+        "type": "monster",
+        "name": "Goblin Raider",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Goblin Raider\n\n- Type: Monster\n- Id: goblin-raider\n- Source: Barrowdale, original homebrew 0.4.0\n- Attribution: Original Outset VTT example content, MIT license.\n- Size: Small\n- Creature type: Fey\n- Alignment: Chaotic Neutral\n- Armor Class: 15\n- Hit Points: 10 (3d6)\n- Speed: 30 feet\n- Skills: Stealth +6\n- Senses: Darkvision 60 feet, Passive Perception 9\n- Languages: Common, Goblin\n- Challenge: 1/4 (50 XP)\n\n| STR | DEX | CON | INT | WIS | CHA |\n| --- | --- | --- | --- | --- | --- |\n| 8 | 14 | 10 | 10 | 8 | 8 |\n\nGoblin raiders slip down from the barrow hills at dusk to steal sheep, tools and anything left unguarded in Barrowdale.\n\n## Trait: Nimble Escape\n\nThe goblin can take the Disengage or Hide action as a Bonus Action on each of its turns.\n\n## Action: Scimitar\n\n- Attack: Melee, +4 to hit, reach 5 feet, one target\n- Hit: 1d6 + 2 slashing damage\n\n## Action: Shortbow\n\n- Attack: Ranged, +4 to hit, range 80/320 feet, one target\n- Hit: 1d6 + 2 piercing damage\n"
+        },
+        "data": {
+          "description": "Goblin raiders slip down from the barrow hills at dusk to steal sheep, tools and anything left unguarded in Barrowdale.",
+          "attribution": "Original Outset VTT example content, MIT license.",
+          "name": "Goblin Raider",
+          "size": "small",
+          "creatureType": "Fey",
+          "alignment": "Chaotic Neutral",
+          "ac": 15,
+          "hp": {
+            "average": 10,
+            "formula": "3d6"
+          },
+          "speed": "30 ft.",
+          "speedFeet": 30,
+          "challenge": "1/4 (50 XP)",
+          "proficiency": 2,
+          "abilities": {
+            "strength": 8,
+            "dexterity": 14,
+            "constitution": 10,
+            "intelligence": 10,
+            "wisdom": 8,
+            "charisma": 8
+          },
+          "saves": {
+            "strength": -1,
+            "dexterity": 2,
+            "constitution": 0,
+            "intelligence": 0,
+            "wisdom": -1,
+            "charisma": -1
+          },
+          "skills": {
+            "stealth": 6
+          },
+          "savingThrowProficiencyRanks": {},
+          "savingThrowBonuses": {},
+          "skillProficiencyRanks": {
+            "stealth": 2
+          },
+          "skillBonuses": {},
+          "senses": "Darkvision 60 feet, Passive Perception 9",
+          "languages": "Common, Goblin",
+          "subtitle": "Small Fey, Chaotic Neutral",
+          "sheetAbilities": [
+            {
+              "id": "nimble-escape",
+              "name": "Nimble Escape",
+              "category": "feature",
+              "timing": "passive",
+              "actions": [],
+              "description": "The goblin can take the Disengage or Hide action as a Bonus Action on each of its turns."
+            },
+            {
+              "id": "scimitar",
+              "name": "Scimitar",
+              "category": "feature",
+              "timing": "action",
+              "actions": [
+                {
+                  "id": "scimitar",
+                  "label": "Scimitar Attack",
+                  "kind": "attack",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "scimitar",
+                    "label": "Scimitar Attack",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "attack",
+                        "kind": "attack",
+                        "label": "Scimitar Attack",
+                        "expression": "1d20 + 4",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ],
+                      "timing": "action"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "scimitar-damage",
+                  "label": "Scimitar Damage",
+                  "kind": "damage",
+                  "followUp": true,
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "scimitar-damage",
+                    "label": "Scimitar Damage",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "damage",
+                        "kind": "damage",
+                        "label": "Scimitar Damage",
+                        "expression": "1d6 + 2",
+                        "damageType": "slashing",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "shortbow",
+              "name": "Shortbow",
+              "category": "feature",
+              "timing": "action",
+              "actions": [
+                {
+                  "id": "shortbow",
+                  "label": "Shortbow Attack",
+                  "kind": "attack",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "shortbow",
+                    "label": "Shortbow Attack",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 80,
+                      "longRange": 320
+                    },
+                    "rolls": [
+                      {
+                        "id": "attack",
+                        "kind": "attack",
+                        "label": "Shortbow Attack",
+                        "expression": "1d20 + 4",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "ranged-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "ranged-weapon-attack"
+                      ],
+                      "timing": "action"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "shortbow-damage",
+                  "label": "Shortbow Damage",
+                  "kind": "damage",
+                  "followUp": true,
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "shortbow-damage",
+                    "label": "Shortbow Damage",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 80,
+                      "longRange": 320
+                    },
+                    "rolls": [
+                      {
+                        "id": "damage",
+                        "kind": "damage",
+                        "label": "Shortbow Damage",
+                        "expression": "1d6 + 2",
+                        "damageType": "piercing",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "ranged-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "ranged-weapon-attack"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "structured": {
+          "kind": "monster",
+          "actorType": "monster",
+          "darkvisionRangeFeet": 60
+        },
+        "contentHash": "entry-d74c9d6c06299246"
+      },
+      {
+        "id": "barrow-wight",
+        "type": "monster",
+        "name": "Barrow Wight",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Barrow Wight\n\n- Type: Monster\n- Id: barrow-wight\n- Source: Barrowdale, original homebrew 0.4.0\n- Attribution: Original Outset VTT example content, MIT license.\n- Size: Medium\n- Creature type: Undead\n- Alignment: Neutral Evil\n- Armor Class: 16 (chain mail)\n- Hit Points: 90 (12d8 + 36)\n- Speed: 30 feet\n- Saving throws: Constitution +6, Wisdom +4\n- Skills: Perception +4\n- Senses: Darkvision 60 feet\n- Languages: The languages it knew in life\n- Challenge: 5 (1,800 XP)\n- Legendary actions: 2\n- Legendary resistance: 2/Day\n\n| STR | DEX | CON | INT | WIS | CHA |\n| --- | --- | --- | --- | --- | --- |\n| 18 | 14 | 16 | 10 | 12 | 15 |\n\nThe chieftain buried beneath the great barrow still wears his rusted mail and guards his grave goods against the living.\n\n## Trait: Sunlight Sensitivity\n\nWhile in sunlight, the wight has Disadvantage on attack rolls and on Wisdom (Perception) checks.\n\n## Action: Multiattack\n\nThe wight makes one Barrow Blade attack and one Grave Grasp attack.\n\n## Action: Barrow Blade\n\n- Attack: Melee, +7 to hit, reach 5 feet, one target\n- Hit: 1d8 + 4 slashing damage\n\n## Action: Grave Grasp\n\n- Attack: Melee, +7 to hit, reach 5 feet, one target\n- Hit: 2d6 + 4 necrotic damage\n- On hit: Grappled (escape DC 14)\n\n## Action: Grave Chill\n\n- Uses: Recharge 5-6\n- Save: Constitution 14, half damage on a success\n- Area: 15-foot cone\n- Hit: 6d6 cold damage\n\n## Bonus action: Grave Hunger\n\n- Uses: 1/Day\n- Target: Self\n- Effect: Regain 20 hit points\n\n## Legendary action: Shadow Step\n\nThe wight moves up to its speed without provoking Opportunity Attacks.\n"
+        },
+        "data": {
+          "description": "The chieftain buried beneath the great barrow still wears his rusted mail and guards his grave goods against the living.",
+          "attribution": "Original Outset VTT example content, MIT license.",
+          "name": "Barrow Wight",
+          "size": "medium",
+          "creatureType": "Undead",
+          "alignment": "Neutral Evil",
+          "ac": 16,
+          "acSource": "chain mail",
+          "hp": {
+            "average": 90,
+            "formula": "12d8 + 36"
+          },
+          "speed": "30 ft.",
+          "speedFeet": 30,
+          "challenge": "5 (1,800 XP)",
+          "proficiency": 3,
+          "abilities": {
+            "strength": 18,
+            "dexterity": 14,
+            "constitution": 16,
+            "intelligence": 10,
+            "wisdom": 12,
+            "charisma": 15
+          },
+          "saves": {
+            "strength": 4,
+            "dexterity": 2,
+            "constitution": 6,
+            "intelligence": 0,
+            "wisdom": 4,
+            "charisma": 2
+          },
+          "skills": {
+            "perception": 4
+          },
+          "savingThrowProficiencyRanks": {
+            "constitution": 1,
+            "wisdom": 1
+          },
+          "savingThrowBonuses": {},
+          "skillProficiencyRanks": {
+            "perception": 1
+          },
+          "skillBonuses": {},
+          "senses": "Darkvision 60 feet",
+          "languages": "The languages it knew in life",
+          "subtitle": "Medium Undead, Neutral Evil",
+          "legendaryActionUses": 2,
+          "legendaryResistanceUses": 2,
+          "trackedUses": [
+            {
+              "abilityId": "grave-chill",
+              "resourceId": "abilityUses1",
+              "max": 1
+            },
+            {
+              "abilityId": "grave-hunger",
+              "resourceId": "abilityUses2",
+              "max": 1
+            }
+          ],
+          "sheetAbilities": [
+            {
+              "id": "sunlight-sensitivity",
+              "name": "Sunlight Sensitivity",
+              "category": "feature",
+              "timing": "passive",
+              "actions": [],
+              "description": "While in sunlight, the wight has Disadvantage on attack rolls and on Wisdom (Perception) checks."
+            },
+            {
+              "id": "multiattack",
+              "name": "Multiattack",
+              "category": "feature",
+              "timing": "action",
+              "actions": [],
+              "description": "The wight makes one Barrow Blade attack and one Grave Grasp attack."
+            },
+            {
+              "id": "barrow-blade",
+              "name": "Barrow Blade",
+              "category": "feature",
+              "timing": "action",
+              "actions": [
+                {
+                  "id": "barrow-blade",
+                  "label": "Barrow Blade Attack",
+                  "kind": "attack",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "barrow-blade",
+                    "label": "Barrow Blade Attack",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "attack",
+                        "kind": "attack",
+                        "label": "Barrow Blade Attack",
+                        "expression": "1d20 + 7",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ],
+                      "timing": "action"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "barrow-blade-damage",
+                  "label": "Barrow Blade Damage",
+                  "kind": "damage",
+                  "followUp": true,
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "barrow-blade-damage",
+                    "label": "Barrow Blade Damage",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "damage",
+                        "kind": "damage",
+                        "label": "Barrow Blade Damage",
+                        "expression": "1d8 + 4",
+                        "damageType": "slashing",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "grave-grasp",
+              "name": "Grave Grasp",
+              "category": "feature",
+              "timing": "action",
+              "actions": [
+                {
+                  "id": "grave-grasp",
+                  "label": "Grave Grasp Attack",
+                  "kind": "attack",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "grave-grasp",
+                    "label": "Grave Grasp Attack",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "attack",
+                        "kind": "attack",
+                        "label": "Grave Grasp Attack",
+                        "expression": "1d20 + 7",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ],
+                      "timing": "action"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "grave-grasp-damage",
+                  "label": "Grave Grasp Damage",
+                  "kind": "damage",
+                  "followUp": true,
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "grave-grasp-damage",
+                    "label": "Grave Grasp Damage",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "maxTargets": 1,
+                      "requiresLineOfSight": true,
+                      "range": 5
+                    },
+                    "rolls": [
+                      {
+                        "id": "damage",
+                        "kind": "damage",
+                        "label": "Grave Grasp Damage",
+                        "expression": "2d6 + 4",
+                        "damageType": "necrotic",
+                        "tags": [
+                          "monster-feature",
+                          "attack",
+                          "melee-weapon-attack"
+                        ]
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "attack",
+                        "melee-weapon-attack"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "grave-grasp-apply-grappled",
+                  "label": "Apply Grappled",
+                  "kind": "utility",
+                  "followUp": true,
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "grave-grasp-apply-grappled",
+                    "label": "Apply Grappled",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "creature",
+                      "minTargets": 1,
+                      "appliesConditions": [
+                        "Grappled"
+                      ]
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "effects": [
+                      {
+                        "kind": "applyCondition",
+                        "target": "targets",
+                        "conditionId": "grappled",
+                        "operation": "apply",
+                        "parameters": {
+                          "source": "Grave Grasp",
+                          "escapeDc": 14
+                        }
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature",
+                        "apply-condition"
+                      ],
+                      "timing": "freeAction"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ],
+              "metadata": {
+                "hitConditions": [
+                  "Grappled"
+                ],
+                "grappleEscapeDc": 14
+              }
+            },
+            {
+              "id": "grave-chill",
+              "name": "Grave Chill",
+              "category": "feature",
+              "timing": "action",
+              "actions": [
+                {
+                  "id": "grave-chill",
+                  "label": "Grave Chill Damage",
+                  "kind": "damage",
+                  "roll": {
+                    "expression": "6d6",
+                    "label": "Cold Damage",
+                    "damageType": "cold"
+                  },
+                  "effects": [
+                    {
+                      "kind": "createTemplate",
+                      "target": "source",
+                      "template": {
+                        "kind": "cone",
+                        "size": 15
+                      }
+                    }
+                  ],
+                  "requirements": [
+                    {
+                      "resourceId": "abilityUses1",
+                      "resourceAmount": 1,
+                      "resourceMessage": "Grave Chill is spent. Roll its recharge at the start of the monster's turn."
+                    }
+                  ]
+                },
+                {
+                  "id": "recharge",
+                  "label": "Recharge 5-6",
+                  "kind": "utility",
+                  "followUp": true,
+                  "description": "Rolls the d6 for Grave Chill; on a 5 or higher the table restores it.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "recharge",
+                    "label": "Grave Chill: Recharge 5-6",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [
+                      {
+                        "id": "recharge",
+                        "kind": "roll",
+                        "expression": "1d6",
+                        "label": "Grave Chill recharge (5-6)",
+                        "against": {
+                          "kind": "difficulty",
+                          "value": 5
+                        }
+                      }
+                    ],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "recharge",
+                        "grave-chill"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "restore",
+                  "label": "Restore",
+                  "kind": "utility",
+                  "followUp": true,
+                  "description": "Restores Grave Chill after a successful recharge roll.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "restore",
+                    "label": "Restore Grave Chill",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "effects": [
+                      {
+                        "kind": "modifyResource",
+                        "target": "source",
+                        "resourceId": "abilityUses1",
+                        "operation": "set",
+                        "value": {
+                          "kind": "constant",
+                          "value": 1
+                        }
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "restore-uses",
+                        "grave-chill"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ],
+              "metadata": {
+                "limitedUse": {
+                  "rechargeMinimum": 5
+                },
+                "saveAbility": "constitution",
+                "saveDc": 14,
+                "failedSaveDamage": {
+                  "expression": "6d6",
+                  "damageType": "Cold"
+                },
+                "successfulSaveDamage": "half",
+                "trackedUses": {
+                  "resourceId": "abilityUses1",
+                  "label": "Grave Chill",
+                  "max": 1,
+                  "rechargeMinimum": 5,
+                  "recovery": "roll"
+                }
+              },
+              "targeting": {
+                "kind": "self"
+              }
+            },
+            {
+              "id": "grave-hunger",
+              "name": "Grave Hunger",
+              "category": "feature",
+              "timing": "bonusAction",
+              "actions": [
+                {
+                  "id": "grave-hunger",
+                  "label": "Grave Hunger",
+                  "kind": "utility",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "grave-hunger",
+                    "label": "Grave Hunger",
+                    "requirements": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "abilityUses2",
+                        "amount": 1,
+                        "message": "Grave Hunger has no uses left today."
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "abilityUses2",
+                        "amount": 1
+                      }
+                    ],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "effects": [
+                      {
+                        "kind": "modifyResource",
+                        "target": "source",
+                        "resourceId": "hp",
+                        "field": "current",
+                        "operation": "add",
+                        "value": {
+                          "kind": "constant",
+                          "value": 20
+                        },
+                        "clamp": true
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster-feature"
+                      ],
+                      "timing": "bonusAction"
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                },
+                {
+                  "id": "restore",
+                  "label": "Restore",
+                  "kind": "utility",
+                  "followUp": true,
+                  "description": "Restores Grave Hunger to 1 uses for a new day.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "restore",
+                    "label": "Restore Grave Hunger",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "effects": [
+                      {
+                        "kind": "modifyResource",
+                        "target": "source",
+                        "resourceId": "abilityUses2",
+                        "operation": "set",
+                        "value": {
+                          "kind": "constant",
+                          "value": 1
+                        }
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "restore-uses",
+                        "grave-hunger"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ],
+              "metadata": {
+                "limitedUse": {
+                  "uses": 1,
+                  "period": "day"
+                },
+                "trackedUses": {
+                  "resourceId": "abilityUses2",
+                  "label": "Grave Hunger",
+                  "max": 1,
+                  "recovery": "day"
+                }
+              }
+            },
+            {
+              "id": "shadow-step",
+              "name": "Shadow Step",
+              "category": "feature",
+              "timing": "legendary",
+              "actions": [
+                {
+                  "id": "use",
+                  "label": "Use",
+                  "kind": "utility",
+                  "description": "Uses Shadow Step and posts its card; the table resolves what it does.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "use",
+                    "label": "Use Shadow Step",
+                    "requirements": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "legendaryActions",
+                        "amount": 1,
+                        "message": "No legendary action uses left. The barrow wight regains them at the start of its turn."
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "legendaryActions",
+                        "amount": 1
+                      }
+                    ],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "legendary-action",
+                        "shadow-step"
+                      ]
+                    },
+                    "presentation": {
+                      "chatCard": true
+                    }
+                  }
+                }
+              ],
+              "description": "The wight moves up to its speed without provoking Opportunity Attacks."
+            },
+            {
+              "id": "monster-legendary-actions",
+              "name": "Legendary Actions",
+              "category": "feature",
+              "timing": "freeAction",
+              "description": "2 uses. Immediately after another creature's turn, the barrow wight can expend a use to take one of its legendary actions. It regains all expended uses at the start of its turn.",
+              "metadata": {
+                "legendaryActionUses": 2
+              },
+              "actions": [
+                {
+                  "id": "restore",
+                  "label": "Restore",
+                  "kind": "utility",
+                  "followUp": true,
+                  "description": "Restores the barrow wight's 2 legendary action uses; in an encounter they come back at the start of its turn.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "restore",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "presentation": {
+                      "chatCard": true
+                    },
+                    "label": "Restore legendary action uses",
+                    "effects": [
+                      {
+                        "kind": "modifyResource",
+                        "target": "source",
+                        "resourceId": "legendaryActions",
+                        "operation": "set",
+                        "value": {
+                          "kind": "constant",
+                          "value": 2
+                        }
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "restore-uses",
+                        "legendary-actions"
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "monster-legendary-resistance",
+              "name": "Legendary Resistance",
+              "category": "feature",
+              "timing": "freeAction",
+              "description": "If the barrow wight fails a saving throw, it can choose to succeed instead. 2 uses a day.",
+              "metadata": {
+                "legendaryResistanceUses": 2
+              },
+              "actions": [
+                {
+                  "id": "succeed",
+                  "label": "Succeed instead",
+                  "kind": "utility",
+                  "description": "The barrow wight turns a failed saving throw into a success; the table treats the save as passed.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "succeed",
+                    "requirements": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "legendaryResistance",
+                        "amount": 1,
+                        "message": "No Legendary Resistance uses left today."
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "kind": "resource",
+                        "resourceId": "legendaryResistance",
+                        "amount": 1
+                      }
+                    ],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "presentation": {
+                      "chatCard": true
+                    },
+                    "label": "Legendary Resistance: succeed instead",
+                    "effects": [],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "legendary-resistance"
+                      ],
+                      "rollOffer": {
+                        "rollKinds": [
+                          "save"
+                        ],
+                        "label": "Legendary Resistance: succeed instead"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "restore",
+                  "label": "Restore",
+                  "kind": "utility",
+                  "followUp": true,
+                  "description": "Restores the barrow wight's 2 Legendary Resistance uses for a new day.",
+                  "pipeline": {
+                    "schemaVersion": 2,
+                    "id": "restore",
+                    "requirements": [],
+                    "costs": [],
+                    "targeting": {
+                      "kind": "self"
+                    },
+                    "rolls": [],
+                    "outcomes": [],
+                    "presentation": {
+                      "chatCard": true
+                    },
+                    "label": "Restore Legendary Resistance",
+                    "effects": [
+                      {
+                        "kind": "modifyResource",
+                        "target": "source",
+                        "resourceId": "legendaryResistance",
+                        "operation": "set",
+                        "value": {
+                          "kind": "constant",
+                          "value": 2
+                        }
+                      }
+                    ],
+                    "semantics": {
+                      "tags": [
+                        "monster",
+                        "restore-uses",
+                        "legendary-resistance"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "structured": {
+          "kind": "monster",
+          "actorType": "monster",
+          "darkvisionRangeFeet": 60
+        },
+        "contentHash": "entry-32d970310b6f784e"
+      },
+      {
+        "id": "hill-folk",
+        "type": "race",
+        "name": "Hill Folk",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Hill Folk\n\n- Type: Species\n- Id: hill-folk\n- Source: Barrowdale, original homebrew 0.4.0\n- Attribution: Original Outset VTT example content, MIT license. References the separately attributed SRD Fire Bolt and Light entries.\n- Size: Medium\n- Speed: 30 feet\n- Darkvision: 60 feet\n\nHill folk herd sheep and dig for iron in the uplands above Barrowdale. Long winters in sod houses have made them hardy, and every family keeps a hearth gift passed from grandparent to grandchild.\n\n## Trait: Hardy\n\n- Hit point maximum: +1 per level\n\n## Choice: Hearth Gift\n\n- Choose: 1\n- Spellcasting ability: Intelligence, Wisdom, or Charisma\n\n### Option: Hearthfire\n\n- Spell: Fire Bolt (level 1)\n\n### Option: Hearthlight\n\n- Spell: Light (level 1)\n"
+        },
+        "data": {
+          "description": "Hill folk herd sheep and dig for iron in the uplands above Barrowdale. Long winters in sod houses have made them hardy, and every family keeps a hearth gift passed from grandparent to grandchild.",
+          "attribution": "Original Outset VTT example content, MIT license. References the separately attributed SRD Fire Bolt and Light entries."
+        },
+        "structured": {
+          "kind": "race",
+          "sizeOptions": [
+            "Medium"
+          ],
+          "speed": 30,
+          "darkvisionRangeFeet": 60,
+          "hitPointMaximumBonus": {
+            "perCharacterLevel": 1,
+            "label": "Hardy"
+          },
+          "choiceGroups": [
+            {
+              "id": "hearth-gift",
+              "label": "Hearth Gift",
+              "options": [
+                {
+                  "id": "hearthfire",
+                  "label": "Hearthfire",
+                  "grants": {
+                    "label": "Hearth Gift",
+                    "spells": [
+                      {
+                        "packId": "dnd-srd-5-2-1-spells",
+                        "entryId": "fire-bolt",
+                        "characterLevel": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "hearthlight",
+                  "label": "Hearthlight",
+                  "grants": {
+                    "label": "Hearth Gift",
+                    "spells": [
+                      {
+                        "packId": "dnd-srd-5-2-1-spells",
+                        "entryId": "light",
+                        "characterLevel": 1
+                      }
+                    ]
+                  }
+                }
+              ],
+              "count": 1,
+              "spellcastingAbilities": [
+                "intelligence",
+                "wisdom",
+                "charisma"
+              ]
+            }
+          ]
+        },
+        "contentHash": "entry-b53e2f2f85495c38"
+      },
+      {
+        "id": "dale-guide",
+        "type": "background",
+        "name": "Dale Guide",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Dale Guide\n\n- Type: Background\n- Id: dale-guide\n- Source: Barrowdale, original homebrew 0.4.0\n- Attribution: Original Outset VTT example content, MIT license. References separately attributed SRD feat and equipment entries.\n- Ability scores: Dexterity, Constitution, Wisdom\n- Skill proficiencies: Perception, Survival\n- Tool proficiency: Cartographer's Tools\n- Feat: Alert\n- Equipment: Cartographer's Tools, Traveler's Clothes, Rope, 5 Torches, 10 GP\n\nYou led flocks and travelers through the upland passes, reading the weather and the ground before choosing a path.\n"
+        },
+        "data": {
+          "description": "You led flocks and travelers through the upland passes, reading the weather and the ground before choosing a path.",
+          "attribution": "Original Outset VTT example content, MIT license. References separately attributed SRD feat and equipment entries."
+        },
+        "structured": {
+          "kind": "background",
+          "abilityScoreOptions": [
+            "Dexterity",
+            "Constitution",
+            "Wisdom"
+          ],
+          "skillProficiencies": [
+            "Perception",
+            "Survival"
+          ],
+          "toolProficiencies": [
+            {
+              "packId": "dnd-srd-5-2-1-equipment",
+              "entryId": "cartographer-s-tools"
+            }
+          ],
+          "feat": {
+            "packId": "dnd-srd-5-2-1-character-options",
+            "entryId": "alert"
+          },
+          "startingEquipment": {
+            "items": [
+              {
+                "packId": "dnd-srd-5-2-1-equipment",
+                "entryId": "cartographer-s-tools",
+                "quantity": 1
+              },
+              {
+                "packId": "dnd-srd-5-2-1-equipment",
+                "entryId": "clothes-traveler-s",
+                "quantity": 1
+              },
+              {
+                "packId": "dnd-srd-5-2-1-equipment",
+                "entryId": "rope",
+                "quantity": 1
+              },
+              {
+                "packId": "dnd-srd-5-2-1-equipment",
+                "entryId": "torch",
+                "quantity": 5
+              }
+            ],
+            "currency": {
+              "gp": 10
+            }
+          }
+        },
+        "contentHash": "entry-b2c94b01a91925b0"
+      },
+      {
+        "id": "amulet-of-warding",
+        "type": "item",
+        "name": "Amulet of Warding",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Amulet of Warding\n\n- Type: Magic item\n- Id: amulet-of-warding\n- Source: Barrowdale, original homebrew 0.4.0\n- Attribution: Original Outset VTT example content, MIT license.\n- Rarity: Uncommon\n- Requires attunement: Yes\n- Equipment slot: Neck\n- Charges: 3\n- Recharge: All charges at dawn\n- Weight: 0.1 lb\n\nA silver disc stamped with an old warding rune, worn by the dale's shepherds against things that walk at night.\n\n## Passive: Warding\n\n- Requires: Equipped and attuned\n- Effect: +1 Armor Class\n\n## Action: Invoke Ward\n\n- Requires: Equipped and attuned\n- Cost: 1 charge\n- Target: Self\n- Effect: Gain 5 temporary hit points\n"
+        },
+        "data": {
+          "description": "A silver disc stamped with an old warding rune, worn by the dale's shepherds against things that walk at night.",
+          "attribution": "Original Outset VTT example content, MIT license."
+        },
+        "structured": {
+          "kind": "item",
+          "item": {
+            "id": "amulet-of-warding",
+            "name": "Amulet of Warding",
+            "category": "magicItem",
+            "quantity": 1,
+            "actions": [
+              {
+                "id": "invoke-ward",
+                "label": "Invoke Ward",
+                "kind": "utility",
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "invoke-ward",
+                  "label": "Invoke Ward",
+                  "requirements": [
+                    {
+                      "kind": "itemState",
+                      "state": "equippedAndAttuned"
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "kind": "itemCharge",
+                      "amount": 1
+                    }
+                  ],
+                  "targeting": {
+                    "kind": "self"
+                  },
+                  "rolls": [],
+                  "outcomes": [],
+                  "effects": [
+                    {
+                      "kind": "modifyResource",
+                      "target": "source",
+                      "resourceId": "hp",
+                      "field": "temporary",
+                      "operation": "max",
+                      "value": {
+                        "kind": "constant",
+                        "value": 5
+                      }
+                    }
+                  ],
+                  "semantics": {
+                    "tags": [
+                      "magic-item"
+                    ],
+                    "timing": "action"
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              }
+            ],
+            "attuned": false,
+            "metadata": {
+              "rarity": "Uncommon",
+              "requiresAttunement": true
+            },
+            "equipPlacements": [
+              {
+                "id": "neck",
+                "label": "Neck",
+                "slotIds": [
+                  "neck"
+                ]
+              }
+            ],
+            "charges": {
+              "current": 3,
+              "max": 3,
+              "reset": "dawn"
+            },
+            "weight": {
+              "value": 0.1,
+              "unit": "lb"
+            },
+            "timing": "action",
+            "rulesEffects": [
+              {
+                "id": "warding",
+                "label": "Warding",
+                "appliesWhen": "equippedAndAttuned",
+                "target": "attribute",
+                "attributeId": "armorClass",
+                "operation": "add",
+                "value": 1
+              }
+            ],
+            "description": "A silver disc stamped with an old warding rune, worn by the dale's shepherds against things that walk at night."
+          }
+        },
+        "contentHash": "entry-83ebf32d45a81f7c"
+      },
+      {
+        "id": "boar-spear",
+        "type": "item",
+        "name": "Boar Spear",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Boar Spear\n\n- Type: Weapon\n- Id: boar-spear\n- Source: Barrowdale, original homebrew 0.4.0\n- Weapon category: Martial\n- Damage: 1d8 piercing\n- Properties: Versatile (1d10)\n- Weight: 4 lb\n- Cost: 10 GP\n\nA broad-bladed spear with a crossbar below the head, carried by the dale's hunters.\n"
+        },
+        "data": {
+          "description": "A broad-bladed spear with a crossbar below the head, carried by the dale's hunters."
+        },
+        "structured": {
+          "kind": "item",
+          "item": {
+            "id": "boar-spear",
+            "name": "Boar Spear",
+            "category": "weapon",
+            "quantity": 1,
+            "actions": [
+              {
+                "id": "attack",
+                "label": "Attack",
+                "kind": "attack",
+                "roll": {
+                  "expression": "1d20 + {strengthMod} + {proficiency}",
+                  "label": "Boar Spear Attack"
+                }
+              },
+              {
+                "id": "damage",
+                "label": "Piercing Damage",
+                "kind": "damage",
+                "followUp": true,
+                "roll": {
+                  "expression": "1d8 + {strengthMod}",
+                  "label": "Piercing Damage",
+                  "damageType": "piercing"
+                }
+              },
+              {
+                "id": "damage-two-handed",
+                "label": "Two-handed Piercing Damage",
+                "kind": "damage",
+                "followUp": true,
+                "roll": {
+                  "expression": "1d10 + {strengthMod}",
+                  "label": "Two-handed Piercing Damage",
+                  "damageType": "piercing"
+                }
+              }
+            ],
+            "equipPlacements": [
+              {
+                "id": "main-hand",
+                "label": "Main hand",
+                "slotIds": [
+                  "mainHand"
+                ]
+              },
+              {
+                "id": "off-hand",
+                "label": "Off hand",
+                "slotIds": [
+                  "offHand"
+                ]
+              },
+              {
+                "id": "two-handed",
+                "label": "Two-handed",
+                "slotIds": [
+                  "mainHand",
+                  "offHand"
+                ]
+              }
+            ],
+            "timing": "action",
+            "metadata": {
+              "category": "weapon",
+              "equipmentKind": "weapon",
+              "rangeType": "melee",
+              "damage": "1d8",
+              "damageType": "Piercing",
+              "weaponCategory": "martial",
+              "properties": "Versatile (1d10)",
+              "weaponRules": "srd-5.2.1",
+              "cost": "10 GP"
+            },
+            "weight": {
+              "value": 4,
+              "unit": "lb"
+            },
+            "description": "A broad-bladed spear with a crossbar below the head, carried by the dale's hunters."
+          }
+        },
+        "contentHash": "entry-e3117e9919a4c6e8"
+      },
+      {
+        "id": "barrow-mail",
+        "type": "item",
+        "name": "Barrow Mail",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Barrow Mail\n\n- Type: Armor\n- Id: barrow-mail\n- Source: Barrowdale, original homebrew 0.4.0\n- Armor category: Medium\n- Armor Class: 14 + Dex (max 2)\n- Stealth: Disadvantage\n- Weight: 45 lb\n- Cost: 50 GP\n\nOverlapping iron scales taken from the barrow's armory and riveted onto new leather.\n"
+        },
+        "data": {
+          "description": "Overlapping iron scales taken from the barrow's armory and riveted onto new leather."
+        },
+        "structured": {
+          "kind": "item",
+          "item": {
+            "id": "barrow-mail",
+            "name": "Barrow Mail",
+            "category": "armor",
+            "quantity": 1,
+            "actions": [],
+            "equipPlacements": [
+              {
+                "id": "body",
+                "label": "Body armor",
+                "slotIds": [
+                  "body"
+                ]
+              }
+            ],
+            "rulesEffects": [
+              {
+                "id": "armor-ac",
+                "label": "Barrow Mail AC",
+                "appliesWhen": "equipped",
+                "target": "attribute",
+                "attributeId": "armorClass",
+                "operation": "set",
+                "value": "14 + min(dexterityMod, 2)"
+              }
+            ],
+            "modeModifiers": [
+              {
+                "id": "armor-stealth-disadvantage",
+                "label": "Armor (Stealth)",
+                "kind": "rollMode",
+                "mode": "disadvantage",
+                "filter": {
+                  "perspectives": [
+                    "source"
+                  ],
+                  "rollKinds": [
+                    "check"
+                  ],
+                  "skillIds": [
+                    "stealth"
+                  ]
+                },
+                "appliesWhen": "equipped"
+              }
+            ],
+            "metadata": {
+              "armorClass": "{\"base\":14,\"dex\":\"max2\"}",
+              "category": "armor",
+              "equipmentKind": "armor",
+              "armorCategory": "medium",
+              "stealthDisadvantage": true,
+              "cost": "50 GP"
+            },
+            "weight": {
+              "value": 45,
+              "unit": "lb"
+            },
+            "description": "Overlapping iron scales taken from the barrow's armory and riveted onto new leather."
+          }
+        },
+        "contentHash": "entry-4eef8d83a93b0d38"
+      },
+      {
+        "id": "healing-draught",
+        "type": "item",
+        "name": "Healing Draught",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Healing Draught\n\n- Type: Potion\n- Id: healing-draught\n- Source: Barrowdale, original homebrew 0.4.0\n- Rarity: Common\n- Weight: 0.5 lb\n\nA red cordial brewed by the dale's herbalist from hedge roses and honey.\n\n## Bonus action: Drink\n\n- Effect: Regain 2d4 + 2 hit points\n"
+        },
+        "data": {
+          "description": "A red cordial brewed by the dale's herbalist from hedge roses and honey."
+        },
+        "structured": {
+          "kind": "item",
+          "item": {
+            "id": "healing-draught",
+            "name": "Healing Draught",
+            "category": "consumable",
+            "quantity": 1,
+            "actions": [
+              {
+                "id": "drink",
+                "label": "Drink",
+                "kind": "healing",
+                "roll": {
+                  "expression": "2d4 + 2",
+                  "label": "Healing"
+                },
+                "itemQuantityAmount": 1
+              }
+            ],
+            "metadata": {
+              "rarity": "Common"
+            },
+            "weight": {
+              "value": 0.5,
+              "unit": "lb"
+            },
+            "timing": "bonusAction",
+            "description": "A red cordial brewed by the dale's herbalist from hedge roses and honey."
+          }
+        },
+        "contentHash": "entry-dc9bad571f802aef"
+      },
+      {
+        "id": "keen-watcher",
+        "type": "feat",
+        "name": "Keen Watcher",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Keen Watcher\n\n- Type: Feat\n- Id: keen-watcher\n- Source: Barrowdale, original homebrew 0.4.0\n- Category: General\n- Prerequisite: Level 4+\n- Ability score increase: +1 Wisdom or Constitution\n\nYou have stood the night watch on the dale's walls, and little escapes your notice.\n\n## Passive: Keen Eye\n\n- Effect: +2 to ranged weapon attack rolls\n- Effect: Advantage on Perception checks\n\n## Bonus action: Steady Nerves\n\n- Target: Self\n- Effect: Gain 5 temporary hit points\n\n## Trait: Night Watch\n\nYou need only four hours of sleep to gain the benefit of a Long Rest.\n"
+        },
+        "data": {
+          "description": "You have stood the night watch on the dale's walls, and little escapes your notice.\n\nNight Watch. You need only four hours of sleep to gain the benefit of a Long Rest.",
+          "featCategory": "General",
+          "category": "general",
+          "prerequisite": "Level 4+",
+          "feat": {
+            "category": "general",
+            "featCategory": "General",
+            "prerequisite": "Level 4+",
+            "abilityScoreIncrease": {
+              "abilities": [
+                "wisdom",
+                "constitution"
+              ],
+              "amount": 1,
+              "max": 20
+            }
+          }
+        },
+        "structured": {
+          "kind": "feat",
+          "ability": {
+            "id": "keen-watcher",
+            "name": "Keen Watcher",
+            "category": "feature",
+            "description": "You have stood the night watch on the dale's walls, and little escapes your notice.\n\nNight Watch. You need only four hours of sleep to gain the benefit of a Long Rest.",
+            "actions": [
+              {
+                "id": "steady-nerves",
+                "label": "Steady Nerves",
+                "kind": "utility",
+                "pipeline": {
+                  "schemaVersion": 2,
+                  "id": "steady-nerves",
+                  "label": "Steady Nerves",
+                  "requirements": [],
+                  "costs": [],
+                  "targeting": {
+                    "kind": "self"
+                  },
+                  "rolls": [],
+                  "outcomes": [],
+                  "effects": [
+                    {
+                      "kind": "modifyResource",
+                      "target": "source",
+                      "resourceId": "hp",
+                      "field": "temporary",
+                      "operation": "max",
+                      "value": {
+                        "kind": "constant",
+                        "value": 5
+                      }
+                    }
+                  ],
+                  "semantics": {
+                    "tags": [
+                      "feat"
+                    ],
+                    "timing": "bonusAction"
+                  },
+                  "presentation": {
+                    "chatCard": true
+                  }
+                }
+              }
+            ],
+            "modeModifiers": [
+              {
+                "id": "keen-eye",
+                "label": "Keen Eye",
+                "filter": {
+                  "perspectives": [
+                    "source"
+                  ],
+                  "weaponProperties": [
+                    "ranged"
+                  ],
+                  "actionTagsAny": [
+                    "weapon"
+                  ],
+                  "rollKinds": [
+                    "attack"
+                  ]
+                },
+                "kind": "rollBonus",
+                "value": 2
+              },
+              {
+                "id": "keen-eye-2",
+                "label": "Keen Eye",
+                "kind": "rollMode",
+                "mode": "advantage",
+                "filter": {
+                  "perspectives": [
+                    "source"
+                  ],
+                  "skillIds": [
+                    "perception"
+                  ],
+                  "rollKinds": [
+                    "check"
+                  ]
+                }
+              }
+            ],
+            "timing": "bonusAction"
+          }
+        },
+        "contentHash": "entry-88b75d973c045021"
+      },
+      {
+        "id": "flame-dart",
+        "type": "spell",
+        "name": "Flame Dart",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Flame Dart\n\n- Type: Spell\n- Id: flame-dart\n- Source: Barrowdale, original homebrew 0.4.0\n- Level: Cantrip\n- School: Evocation\n- Classes: Sorcerer, Wizard\n- Casting time: Action\n- Range: 60 feet\n- Components: V, S\n- Attack: Ranged spell attack\n- Damage: 1d8 fire\n- Cantrip scaling: 2d8 at level 5, 3d8 at level 11, 4d8 at level 17\n\nYou hurl a dart of flame at a creature or object within range. A flammable object hit by the dart starts burning if it isn't being worn or carried.\n"
+        },
+        "data": {
+          "description": "You hurl a dart of flame at a creature or object within range. A flammable object hit by the dart starts burning if it isn't being worn or carried.",
+          "level": 0,
+          "school": "Evocation",
+          "classes": [
+            "Sorcerer",
+            "Wizard"
+          ],
+          "spell": {
+            "school": "Evocation",
+            "classes": [
+              "Sorcerer",
+              "Wizard"
+            ],
+            "castingTime": "Action",
+            "range": "60 feet",
+            "components": "V, S",
+            "componentsDetail": {
+              "verbal": true,
+              "somatic": true,
+              "material": false
+            },
+            "duration": "Instantaneous",
+            "attack": "ranged",
+            "damage": [
+              {
+                "expression": "1d8",
+                "type": "Fire"
+              }
+            ],
+            "level": 0
+          },
+          "sheetAbility": {
+            "category": "spell",
+            "metadata": {
+              "level": 0,
+              "castingTime": "Action",
+              "range": "60 feet",
+              "components": "V, S",
+              "duration": "Instantaneous",
+              "damageType": "Fire",
+              "mechanic": "Spell attack"
+            },
+            "actions": [
+              {
+                "id": "spell-attack",
+                "label": "Ranged Spell Attack",
+                "kind": "attack",
+                "roll": {
+                  "expression": "1d20 + {spellAttackBonus}",
+                  "label": "Spell Attack"
+                }
+              },
+              {
+                "id": "damage",
+                "label": "Fire Damage",
+                "kind": "damage",
+                "followUp": true,
+                "roll": {
+                  "expression": "1d8",
+                  "label": "Fire Damage",
+                  "damageType": "fire",
+                  "scaling": {
+                    "variable": "level",
+                    "thresholds": [
+                      {
+                        "min": 5,
+                        "expression": "2d8"
+                      },
+                      {
+                        "min": 11,
+                        "expression": "3d8"
+                      },
+                      {
+                        "min": 17,
+                        "expression": "4d8"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "targeting": {
+              "kind": "creature",
+              "range": 60,
+              "rangeUnit": "ft",
+              "maxTargets": 1,
+              "intent": "harmful"
+            },
+            "timing": "action"
+          }
+        },
+        "structured": {
+          "kind": "spell",
+          "level": 0,
+          "school": "Evocation",
+          "classes": [
+            "Sorcerer",
+            "Wizard"
+          ],
+          "ability": {
+            "id": "flame-dart",
+            "name": "Flame Dart",
+            "category": "spell",
+            "metadata": {
+              "level": 0,
+              "castingTime": "Action",
+              "range": "60 feet",
+              "components": "V, S",
+              "duration": "Instantaneous",
+              "damageType": "Fire",
+              "mechanic": "Spell attack"
+            },
+            "timing": "action",
+            "targeting": {
+              "kind": "creature",
+              "maxTargets": 1,
+              "range": 60,
+              "rangeUnit": "ft",
+              "intent": "harmful"
+            },
+            "actions": [
+              {
+                "id": "spell-attack",
+                "label": "Ranged Spell Attack",
+                "kind": "attack",
+                "roll": {
+                  "expression": "1d20 + {spellAttackBonus}",
+                  "label": "Spell Attack"
+                }
+              },
+              {
+                "id": "damage",
+                "label": "Fire Damage",
+                "kind": "damage",
+                "roll": {
+                  "expression": "1d8",
+                  "label": "Fire Damage",
+                  "scaling": {
+                    "variable": "level",
+                    "thresholds": [
+                      {
+                        "min": 5,
+                        "expression": "2d8"
+                      },
+                      {
+                        "min": 11,
+                        "expression": "3d8"
+                      },
+                      {
+                        "min": 17,
+                        "expression": "4d8"
+                      }
+                    ]
+                  },
+                  "damageType": "fire"
+                },
+                "followUp": true
+              }
+            ]
+          }
+        },
+        "contentHash": "entry-df74f51628ac3a9b"
+      },
+      {
+        "id": "winters-breath",
+        "type": "spell",
+        "name": "Winter's Breath",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Winter's Breath\n\n- Type: Spell\n- Id: winters-breath\n- Source: Barrowdale, original homebrew 0.4.0\n- Level: 2\n- School: Evocation\n- Classes: Sorcerer, Wizard\n- Casting time: Action\n- Range: Self\n- Components: V, S, M (a pinch of frost gathered before dawn)\n- Save: Constitution, half damage on a success\n- Area: 15-foot cone\n- Damage: 3d8 cold\n- Higher levels: +1d8 damage per slot level above 2\n\nA blast of grave-cold air roars from your outstretched hands. Water in the area freezes over, and small flames go out.\n"
+        },
+        "data": {
+          "description": "A blast of grave-cold air roars from your outstretched hands. Water in the area freezes over, and small flames go out.",
+          "level": 2,
+          "school": "Evocation",
+          "classes": [
+            "Sorcerer",
+            "Wizard"
+          ],
+          "spell": {
+            "school": "Evocation",
+            "classes": [
+              "Sorcerer",
+              "Wizard"
+            ],
+            "castingTime": "Action",
+            "range": "Self",
+            "components": "V, S, M (a pinch of frost gathered before dawn)",
+            "componentsDetail": {
+              "verbal": true,
+              "somatic": true,
+              "material": true,
+              "materialDescription": "a pinch of frost gathered before dawn"
+            },
+            "duration": "Instantaneous",
+            "saveAbility": "constitution",
+            "slotScaling": {
+              "baseLevel": 2,
+              "increment": "1d8"
+            },
+            "damage": [
+              {
+                "expression": "3d8",
+                "type": "Cold"
+              }
+            ],
+            "level": 2
+          },
+          "sheetAbility": {
+            "category": "spell",
+            "metadata": {
+              "level": 2,
+              "castingTime": "Action",
+              "range": "Self",
+              "components": "V, S, M (a pinch of frost gathered before dawn)",
+              "duration": "Instantaneous",
+              "saveAbility": "constitution",
+              "saveDc": "spellSaveDc",
+              "successfulSaveDamage": "half",
+              "damageType": "Cold",
+              "mechanic": "Constitution save"
+            },
+            "actions": [
+              {
+                "id": "damage",
+                "label": "Cold Damage",
+                "kind": "damage",
+                "roll": {
+                  "expression": "3d8",
+                  "label": "Cold Damage",
+                  "damageType": "cold",
+                  "scaling": {
+                    "variable": "spellSlotLevel",
+                    "thresholds": [
+                      {
+                        "min": 3,
+                        "expression": "4d8"
+                      },
+                      {
+                        "min": 4,
+                        "expression": "5d8"
+                      },
+                      {
+                        "min": 5,
+                        "expression": "6d8"
+                      },
+                      {
+                        "min": 6,
+                        "expression": "7d8"
+                      },
+                      {
+                        "min": 7,
+                        "expression": "8d8"
+                      },
+                      {
+                        "min": 8,
+                        "expression": "9d8"
+                      },
+                      {
+                        "min": 9,
+                        "expression": "10d8"
+                      }
+                    ]
+                  }
+                },
+                "effects": [
+                  {
+                    "kind": "createTemplate",
+                    "target": "source",
+                    "template": {
+                      "kind": "cone",
+                      "size": 15
+                    }
+                  }
+                ]
+              }
+            ],
+            "targeting": {
+              "kind": "self"
+            },
+            "timing": "action"
+          }
+        },
+        "structured": {
+          "kind": "spell",
+          "level": 2,
+          "school": "Evocation",
+          "classes": [
+            "Sorcerer",
+            "Wizard"
+          ],
+          "ability": {
+            "id": "winters-breath",
+            "name": "Winter's Breath",
+            "category": "spell",
+            "metadata": {
+              "level": 2,
+              "castingTime": "Action",
+              "range": "Self",
+              "components": "V, S, M (a pinch of frost gathered before dawn)",
+              "duration": "Instantaneous",
+              "saveAbility": "constitution",
+              "saveDc": "spellSaveDc",
+              "successfulSaveDamage": "half",
+              "damageType": "Cold",
+              "mechanic": "Constitution save"
+            },
+            "timing": "action",
+            "targeting": {
+              "kind": "self"
+            },
+            "actions": [
+              {
+                "id": "damage",
+                "label": "Cold Damage",
+                "kind": "damage",
+                "roll": {
+                  "expression": "3d8",
+                  "label": "Cold Damage",
+                  "scaling": {
+                    "variable": "spellSlotLevel",
+                    "thresholds": [
+                      {
+                        "min": 3,
+                        "expression": "4d8"
+                      },
+                      {
+                        "min": 4,
+                        "expression": "5d8"
+                      },
+                      {
+                        "min": 5,
+                        "expression": "6d8"
+                      },
+                      {
+                        "min": 6,
+                        "expression": "7d8"
+                      },
+                      {
+                        "min": 7,
+                        "expression": "8d8"
+                      },
+                      {
+                        "min": 8,
+                        "expression": "9d8"
+                      },
+                      {
+                        "min": 9,
+                        "expression": "10d8"
+                      }
+                    ]
+                  },
+                  "damageType": "cold"
+                },
+                "effects": [
+                  {
+                    "kind": "createTemplate",
+                    "target": "source",
+                    "template": {
+                      "kind": "cone",
+                      "size": 15
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "contentHash": "entry-e5d2de30dd63eb80"
+      },
+      {
+        "id": "hearth-blessing",
+        "type": "spell",
+        "name": "Hearth Blessing",
+        "systemId": "dnd-srd-5-2-1",
+        "source": "Barrowdale, original homebrew 0.4.0",
+        "sourceData": {
+          "format": "outset-compendium-markdown",
+          "version": "0.0.1",
+          "markdown": "# Hearth Blessing\n\n- Type: Spell\n- Id: hearth-blessing\n- Source: Barrowdale, original homebrew 0.4.0\n- Level: 1\n- School: Abjuration\n- Classes: Cleric, Druid\n- Casting time: Bonus action\n- Range: Touch\n- Components: V, S\n- Healing: 1d8 + spellcasting modifier\n- Higher levels: +1d8 healing per slot level above 1\n\nYou speak the old hearth blessing over a creature you touch, and its wounds close. This spell has no effect on Constructs or Undead.\n"
+        },
+        "data": {
+          "description": "You speak the old hearth blessing over a creature you touch, and its wounds close. This spell has no effect on Constructs or Undead.",
+          "level": 1,
+          "school": "Abjuration",
+          "classes": [
+            "Cleric",
+            "Druid"
+          ],
+          "spell": {
+            "school": "Abjuration",
+            "classes": [
+              "Cleric",
+              "Druid"
+            ],
+            "castingTime": "Bonus action",
+            "range": "Touch",
+            "components": "V, S",
+            "componentsDetail": {
+              "verbal": true,
+              "somatic": true,
+              "material": false
+            },
+            "duration": "Instantaneous",
+            "slotScaling": {
+              "baseLevel": 1,
+              "healingIncreasePerSlotAbove": "1d8"
+            },
+            "healing": [
+              {
+                "expression": "1d8 + {spellcastingAbilityMod}"
+              }
+            ],
+            "level": 1
+          },
+          "sheetAbility": {
+            "category": "spell",
+            "metadata": {
+              "level": 1,
+              "castingTime": "Bonus action",
+              "range": "Touch",
+              "components": "V, S",
+              "duration": "Instantaneous",
+              "mechanic": "Healing"
+            },
+            "actions": [
+              {
+                "id": "healing",
+                "label": "Healing",
+                "kind": "healing",
+                "roll": {
+                  "expression": "1d8 + {spellcastingAbilityMod}",
+                  "label": "Healing",
+                  "scaling": {
+                    "variable": "spellSlotLevel",
+                    "thresholds": [
+                      {
+                        "min": 2,
+                        "expression": "2d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 3,
+                        "expression": "3d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 4,
+                        "expression": "4d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 5,
+                        "expression": "5d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 6,
+                        "expression": "6d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 7,
+                        "expression": "7d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 8,
+                        "expression": "8d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 9,
+                        "expression": "9d8 + {spellcastingAbilityMod}"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "targeting": {
+              "kind": "creature",
+              "range": 5,
+              "rangeUnit": "ft",
+              "maxTargets": 1,
+              "intent": "beneficial",
+              "includeSource": true
+            },
+            "timing": "bonusAction"
+          }
+        },
+        "structured": {
+          "kind": "spell",
+          "level": 1,
+          "school": "Abjuration",
+          "classes": [
+            "Cleric",
+            "Druid"
+          ],
+          "ability": {
+            "id": "hearth-blessing",
+            "name": "Hearth Blessing",
+            "category": "spell",
+            "metadata": {
+              "level": 1,
+              "castingTime": "Bonus action",
+              "range": "Touch",
+              "components": "V, S",
+              "duration": "Instantaneous",
+              "mechanic": "Healing"
+            },
+            "timing": "bonusAction",
+            "targeting": {
+              "kind": "creature",
+              "maxTargets": 1,
+              "range": 5,
+              "rangeUnit": "ft",
+              "includeSource": true,
+              "intent": "beneficial"
+            },
+            "actions": [
+              {
+                "id": "healing",
+                "label": "Healing",
+                "kind": "healing",
+                "roll": {
+                  "expression": "1d8 + {spellcastingAbilityMod}",
+                  "label": "Healing",
+                  "scaling": {
+                    "variable": "spellSlotLevel",
+                    "thresholds": [
+                      {
+                        "min": 2,
+                        "expression": "2d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 3,
+                        "expression": "3d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 4,
+                        "expression": "4d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 5,
+                        "expression": "5d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 6,
+                        "expression": "6d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 7,
+                        "expression": "7d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 8,
+                        "expression": "8d8 + {spellcastingAbilityMod}"
+                      },
+                      {
+                        "min": 9,
+                        "expression": "9d8 + {spellcastingAbilityMod}"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "contentHash": "entry-e1270e1d321d5195"
+      }
+    ],
+    "contentHash": "pack-ff11e1eb8f5752a1",
+    "immutable": true
+  }
+]

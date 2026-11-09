@@ -20,7 +20,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     const [input, output, packPath, ...extra] = process.argv.slice(2);
     if (!input || !output || extra.length) throw new Error('Usage: npm run prepare:example -- <full-srd-source.json> <new-output.json> [pack.json]');
     const base = JSON.parse(await readFile(resolve(input), 'utf8'));
-    const pack = JSON.parse(await readFile(packPath ? resolve(packPath) : new URL('../examples/lantern-marsh/source/pack.json', import.meta.url), 'utf8'));
+    const pack = JSON.parse(await readFile(packPath ? resolve(packPath) : new URL('../examples/barrowdale/source/pack.json', import.meta.url), 'utf8'));
     await writeFile(resolve(output), JSON.stringify(appendSrdPack(base, pack), null, 2) + '\n', { flag: 'wx' });
     console.log('Prepared the full SRD source with the example pack. Validate and import it in Outset personal authoring.');
   } catch (error) { console.error(error.message); process.exitCode = 1; }

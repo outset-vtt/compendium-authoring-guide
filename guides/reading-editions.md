@@ -4,7 +4,7 @@ Reading editions are optional passive Markdown companions to your SRD-based comp
 
 ## Try the reading example
 
-Lantern Marsh includes an [item edition](../examples/lantern-marsh/editions/item-signal-lantern.publication.md), a spell, a monster and an introduction organized into a book. Its Signal Lantern describes charges and recharge as text; the reading edition does not automate them. Follow the [local reading checks](validation.md#run-the-supplied-reading-example) to copy and validate these documents.
+Barrowdale includes an [item edition](../examples/barrowdale/editions/item-amulet-of-warding.publication.md), a spell, a monster and an introduction organized into a book. The Amulet of Warding's charges execute from its template, not from the edition; the reading edition only formats the rule. Follow the [local reading checks](validation.md#run-the-supplied-reading-example) to copy and validate these documents.
 
 ## Entry documents
 
@@ -14,29 +14,29 @@ A `*.publication.md` file starts with strict YAML frontmatter:
 ---
 format: dm-harness-publication
 version: 0.0.1
-id: my-book-item-lantern
-title: Lantern
-entry: my-pack:item:lantern
+id: my-book-item-amulet
+title: Amulet
+entry: my-pack:item:amulet
 sourceHash: entry-COPY_FROM_COMPILED_SOURCE
 source: My original rules, first edition
 attribution: Your actual attribution and license
 ---
 ```
 
-The hash above is illustrative, not a usable value. Use the [working example](../examples/lantern-marsh/editions/item-signal-lantern.publication.md) for a real binding.
+The hash above is illustrative, not a usable value. Use the [working example](../examples/barrowdale/editions/item-amulet-of-warding.publication.md) for a real binding.
 
 Required fields are `format`, `version`, `id`, `title`, `source`, and `attribution`. Entry documents additionally require both `entry` and `sourceHash`. Optional `groups` maps section IDs to contents labels. Optional `sourcePacks` maps pack IDs to exact compiled hashes for other packs whose data was copied or used to derive the edition. A cross-reference alone does not require a source-pack dependency.
 
 ## Reference documents
 
-An introduction or rules chapter without a root entity omits both `entry` and `sourceHash` and includes a nonempty `sourcePacks` map. Never invent an executable entry to satisfy a reading format. See the [introduction example](../examples/lantern-marsh/editions/introduction.publication.md).
+An introduction or rules chapter without a root entity omits both `entry` and `sourceHash` and includes a nonempty `sourcePacks` map. Never invent an executable entry to satisfy a reading format. See the [introduction example](../examples/barrowdale/editions/introduction.publication.md).
 
 ## Body and sections
 
 The body must begin with an H2. Every H2 needs an explicit, stable section ID, unique across the reading corpus:
 
 ```markdown
-## Using the Lantern {#my-book-lantern-use}
+## Wearing the Amulet {#my-book-amulet-use}
 
 Keep the complete rule here, including its exceptions.
 ```
@@ -46,7 +46,7 @@ H3 through H6 nest inside a section. The frontmatter title replaces H1. Supporte
 Ordinary links must use HTTPS. Compendium links use exact installed identities:
 
 ```markdown
-[Marshlight](compendium:lantern-marsh-core:spell:marshlight)
+[Flame Dart](compendium:barrowdale:spell:flame-dart)
 ```
 
 A section may end with one special related-entry fence:
@@ -55,7 +55,7 @@ A section may end with one special related-entry fence:
 ```compendium-links
 groupBy: spell-level
 entries:
-  - lantern-marsh-core:spell:marshlight
+  - barrowdale:spell:flame-dart
 ```
 ````
 
@@ -65,7 +65,7 @@ Raw HTML, images, scripts, general code fences, reference-style links, uneven ta
 
 ## Books
 
-A `*.book.md` file contains only YAML frontmatter, with `format: dm-harness-publication-book`, `version: 0.0.1`, `id`, `title`, and `chapters`. Each chapter has an ID, title, and ordered document IDs. See the [complete outline](../examples/lantern-marsh/editions/lantern-marsh.book.md).
+A `*.book.md` file contains only YAML frontmatter, with `format: dm-harness-publication-book`, `version: 0.0.1`, `id`, `title`, and `chapters`. Each chapter has an ID, title, and ordered document IDs. See the [complete outline](../examples/barrowdale/editions/barrowdale.book.md).
 
 Document membership is explicit. Missing documents, repeated placement, duplicate book IDs, and duplicate chapter IDs within a book fail validation. Book order never bypasses a document's source bindings.
 
@@ -75,4 +75,4 @@ The root entry hash and all declared source-pack hashes must match the supplied 
 
 ## Referencing the SRD base
 
-Copy SRD entry IDs and hashes from the exact compiled base you used. Supply both the homebrew and relevant SRD packs to the validator when linking across them. The example snapshot intentionally contains only Lantern Marsh; it does not stand in for the SRD catalog. Preserve source-pack bindings when an edition derives content from SRD data, along with the original attribution.
+Copy SRD entry IDs and hashes from the exact compiled base you used. Supply both the homebrew and relevant SRD packs to the validator when linking across them. The example snapshot intentionally contains only Barrowdale; it does not stand in for the SRD catalog. Preserve source-pack bindings when an edition derives content from SRD data, along with the original attribution.

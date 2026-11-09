@@ -5,10 +5,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readCorpus, validateCorpus } from '../scripts/validate-publications.mjs';
-const example = fileURLToPath(new URL('../examples/lantern-marsh/', import.meta.url));
+const example = fileURLToPath(new URL('../examples/barrowdale/', import.meta.url));
 const files = await readCorpus(join(example, 'editions'));
 const packs = JSON.parse(await readFile(join(example, 'source/compiled-packs.json'), 'utf8'));
-const item = 'item-signal-lantern.publication.md';
+const item = 'item-amulet-of-warding.publication.md';
 const intro = 'introduction.publication.md';
 const change = (file, before, after) => ({ ...files, [file]: files[file].replace(before, after) });
 
@@ -25,14 +25,14 @@ test('reference documents need source packs and paired entry bindings', () => {
   assert.throws(() => validateCorpus(change(item, /sourceHash:[^\n]+\n/, ''), packs), /sourceHash/);
 });
 test('unknown reference fails', () => {
-  assert.throws(() => validateCorpus(change(item, 'compendium:lantern-marsh-core:spell:marshlight', 'compendium:lantern-marsh-core:spell:missing'), packs), /Unresolved reference/);
+  assert.throws(() => validateCorpus(change(item, 'compendium:barrowdale:background:dale-guide', 'compendium:barrowdale:background:missing'), packs), /Unresolved reference/);
 });
 test('duplicate documents and entry bindings fail', () => {
   assert.throws(() => validateCorpus({...files, 'copy.publication.md': files[item]}, packs), /Duplicate document/);
-  assert.throws(() => validateCorpus({...files, 'copy.publication.md': files[item].replace('id: "lantern-marsh-item-signal-lantern"', 'id: "copy"')}, packs), /Duplicate entry binding/);
+  assert.throws(() => validateCorpus({...files, 'copy.publication.md': files[item].replace('id: "barrowdale-item-amulet-of-warding"', 'id: "copy"')}, packs), /Duplicate entry binding/);
 });
 test('section IDs are globally unique', () => {
-  assert.throws(() => validateCorpus(change(item, '{#lantern-marsh-lantern-use}', '{#lantern-marsh-introduction-notes}'), packs), /Duplicate section/);
+  assert.throws(() => validateCorpus(change(item, '{#barrowdale-amulet-use}', '{#barrowdale-introduction-dale}'), packs), /Duplicate section/);
 });
 test('HTML, images, unsafe links and generic code are rejected', () => {
   for (const content of ['<script>alert(1)</script>', '![image](https://example.com/image.png)', '[bad](javascript:alert)', '```js\nalert(1)\n```']) {
@@ -45,16 +45,16 @@ test('strict YAML rejects unknown fields, duplicates and aliases', () => {
   }
 });
 test('uneven table fails', () => {
-  assert.throws(() => validateCorpus(change(item, '| Amber | Requests a meeting |', '| Amber |'), packs), /same number of cells/);
+  assert.throws(() => validateCorpus(change(item, '| Nights spent in the passes |', '|'), packs), /same number of cells/);
 });
 test('book membership rejects missing and repeated documents', () => {
-  assert.throws(() => validateCorpus(change('lantern-marsh.book.md', '- lantern-marsh-introduction', '- absent'), packs), /Missing book document/);
-  assert.throws(() => validateCorpus(change('lantern-marsh.book.md', '- lantern-marsh-spell-marshlight', '- lantern-marsh-introduction'), packs), /Repeated book document/);
+  assert.throws(() => validateCorpus(change('barrowdale.book.md', '- barrowdale-introduction', '- absent'), packs), /Missing book document/);
+  assert.throws(() => validateCorpus(change('barrowdale.book.md', '- barrowdale-spell-flame-dart', '- barrowdale-introduction'), packs), /Repeated book document/);
 });
 test('spell grouping requires spell levels and final position', () => {
   const changed = structuredClone(packs);
-  const spell = changed[0].entries.find(e => e.id === 'marshlight');
-  delete spell.data.level; delete spell.structured.level;
+  const spell = changed[0].entries.find(e => e.id === 'flame-dart');
+  delete spell.data.level; delete spell.data.spell.level; if (spell.structured) delete spell.structured.level;
   assert.throws(() => validateCorpus(files, changed), /known levels/);
   assert.throws(() => validateCorpus({...files, [intro]: files[intro]+'\nTrailing paragraph.\n'}, packs), /last block/);
 });

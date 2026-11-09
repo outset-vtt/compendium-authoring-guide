@@ -1,8 +1,8 @@
-# Watchfire Mend
+# Hearth Blessing
 
 - Type: Spell
-- Id: watchfire-mend
-- Source: Emberwatch, original homebrew 0.3.0
+- Id: hearth-blessing
+- Source: Barrowdale, original homebrew 0.4.0
 - Level: 1
 - School: Abjuration
 - Classes: Cleric, Druid
@@ -12,4 +12,4 @@
 - Healing: 1d8 + spellcasting modifier
 - Higher levels: +1d8 healing per slot level above 1
 
-Warmth from the old watchfires closes a creature's wounds. This spell has no effect on Constructs or Undead.
+You speak the old hearth blessing over a creature you touch, and its wounds close. This spell has no effect on Constructs or Undead.

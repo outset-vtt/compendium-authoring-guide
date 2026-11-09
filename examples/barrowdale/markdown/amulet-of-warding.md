@@ -1,8 +1,8 @@
-# Cinderward Brooch
+# Amulet of Warding
 
 - Type: Magic item
-- Id: cinderward-brooch
-- Source: Emberwatch, original homebrew 0.3.0
+- Id: amulet-of-warding
+- Source: Barrowdale, original homebrew 0.4.0
 - Attribution: Original Outset VTT example content, MIT license.
 - Rarity: Uncommon
 - Requires attunement: Yes
@@ -11,14 +11,14 @@
 - Recharge: All charges at dawn
 - Weight: 0.1 lb
 
-A volcanic-glass pin remembers the warmth of the old watchfires.
+A silver disc stamped with an old warding rune, worn by the dale's shepherds against things that walk at night.
 
-## Passive: Cinderward Protection
+## Passive: Warding
 
 - Requires: Equipped and attuned
 - Effect: +1 Armor Class
 
-## Action: Kindle Ward
+## Action: Invoke Ward
 
 - Requires: Equipped and attuned
 - Cost: 1 charge

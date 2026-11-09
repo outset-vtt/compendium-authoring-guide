@@ -1,26 +1,25 @@
 # Write content as Markdown templates
 
-Template Markdown is the plain-text way to author a monster, species, background
-or charged magic item for Outset. You write headings, bullet fields and prose;
+Template Markdown is the plain-text way to author a monster, species, background,
+item, feat or spell for Outset. You write headings, bullet fields and prose;
 Rules Studio turns the fields into executable rules and shows you exactly what
 will run before anything is added to your compendium. No JSON is involved.
 
-The complete Emberwatch set is in [examples/emberwatch/markdown](../examples/emberwatch/markdown):
-[Ashglass Sentinel](../examples/emberwatch/markdown/ashglass-sentinel.md),
-[Emberkin](../examples/emberwatch/markdown/emberkin.md),
-[Emberwatch Wayfinder](../examples/emberwatch/markdown/emberwatch-wayfinder.md) and
-[Cinderward Brooch](../examples/emberwatch/markdown/cinderward-brooch.md), plus the
-broader templates: [Ashglass Warden](../examples/emberwatch/markdown/ashglass-warden.md)
-(legendary monster with recharge breath, saves, areas and a grapple),
-[Cinder Lash](../examples/emberwatch/markdown/cinder-lash.md) (weapon),
-[Ashglass Scale](../examples/emberwatch/markdown/ashglass-scale.md) (armor),
-[Watchfire Draught](../examples/emberwatch/markdown/watchfire-draught.md) (potion),
-[Watchfire Sentinel](../examples/emberwatch/markdown/watchfire-sentinel.md) (feat), and the
-spells [Ember Bolt](../examples/emberwatch/markdown/ember-bolt.md) (attack cantrip),
-[Cinder Burst](../examples/emberwatch/markdown/cinder-burst.md) (save with an area) and
-[Watchfire Mend](../examples/emberwatch/markdown/watchfire-mend.md) (healing).
-Download one, change it, and import it. The [JSON pack](../examples/emberwatch/source/pack.json)
-remains the same content in its raw form.
+The complete Barrowdale set is in [examples/barrowdale/markdown](../examples/barrowdale/markdown):
+[Goblin Raider](../examples/barrowdale/markdown/goblin-raider.md) (stat block with melee and ranged attacks),
+[Barrow Wight](../examples/barrowdale/markdown/barrow-wight.md) (legendary monster with a recharge cone, saves, a grapple and daily uses),
+[Hill Folk](../examples/barrowdale/markdown/hill-folk.md) (species with a spell choice),
+[Dale Guide](../examples/barrowdale/markdown/dale-guide.md) (background),
+[Amulet of Warding](../examples/barrowdale/markdown/amulet-of-warding.md) (charged magic item),
+[Boar Spear](../examples/barrowdale/markdown/boar-spear.md) (weapon),
+[Barrow Mail](../examples/barrowdale/markdown/barrow-mail.md) (armor),
+[Healing Draught](../examples/barrowdale/markdown/healing-draught.md) (potion),
+[Keen Watcher](../examples/barrowdale/markdown/keen-watcher.md) (feat), and the spells
+[Flame Dart](../examples/barrowdale/markdown/flame-dart.md) (attack cantrip),
+[Winter's Breath](../examples/barrowdale/markdown/winters-breath.md) (save with an area) and
+[Hearth Blessing](../examples/barrowdale/markdown/hearth-blessing.md) (healing).
+Download one, change it, and import it. The [JSON pack](../examples/barrowdale/source/pack.json)
+is the same content as Import Markdown produces it.
 
 ## Import in Rules Studio
 
@@ -35,7 +34,7 @@ remains the same content in its raw form.
    - **Needs clarification**: the field is supported but its value cannot be
      used: an unknown unit, a name that matches nothing or two things, a choice
      with no options, an effect phrase the engine does not know. Each one names
-     its line and section, such as `Kindle Ward → Cost`. Nothing is added until
+     its line and section, such as `Invoke Ward → Cost`. Nothing is added until
      every marked line in the document is fixed.
    - **Manual**: prose inside a section, tables, and fields the entry type does
      not support. They are kept as text for the table to adjudicate and never
@@ -53,23 +52,23 @@ default. **Export Markdown** on any entry downloads it as `<id>.md`.
 ## Document shape
 
 ```markdown
-# Cinderward Brooch
+# Amulet of Warding
 
 - Type: Magic item
-- Id: cinderward-brooch
+- Id: amulet-of-warding
 - Requires attunement: Yes
 - Equipment slot: Neck
 - Charges: 3
 - Recharge: All charges at dawn
 
-A volcanic-glass pin remembers the warmth of the old watchfires.
+A silver disc stamped with an old warding rune.
 
-## Passive: Cinderward Protection
+## Passive: Warding
 
 - Requires: Equipped and attuned
 - Effect: +1 Armor Class
 
-## Action: Kindle Ward
+## Action: Invoke Ward
 
 - Requires: Equipped and attuned
 - Cost: 1 charge
@@ -129,12 +128,12 @@ exact. A stat block missing a required field is reported before import.
 2. **Compilation** happens when you validate and save or publish. A clean
    review is not a saved version.
 3. **Gameplay** happens at the table. Create fresh private test sheets and run
-   the [Emberwatch checklist](emberwatch.md#verify-in-a-private-campaign).
+   the [Barrowdale checklist](barrowdale.md#verify-in-a-private-campaign).
    Compilation cannot prove those results, and manual clauses never execute.
 
 ## Boundaries
 
-This is the first delivered template set. Reading editions and books, broader
-templates, and assisted free-form prose are later work. Engine gaps stay
-explicit: Alert's initiative bonus is still a documented limitation, and the
-Markdown import does not claim it.
+Templates cover the fields above. Reading editions and books stay a separate
+format, and free-form prose is not interpreted: write the template, or move a
+rule into section text to keep it manual. Conditions a spell applies and a third
+limited monster ability are the known gaps; the review names each one.
