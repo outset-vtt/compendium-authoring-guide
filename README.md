@@ -59,7 +59,7 @@ npm run check:links
 
 ## Versions, contributions and reuse
 
-This is the development guide on `main`, at tooling version **0.4.0** (unreleased), which replaces the Emberwatch and Lantern Marsh examples with Barrowdale. The latest tagged release is [0.3.1](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.3.1), with the previous examples; download its **Source code (zip)** for that version's guide and checks. The guide targets SRD **5.2.1** and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
+This is the guide on `main`, at tooling version **0.4.0**, which uses the Barrowdale examples. The latest tagged release is [0.4.0](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.4.0); download its **Source code (zip)** for that version's guide and checks. `main` may contain newer changes than a tagged release. Release [0.3.1](https://github.com/outset-vtt/compendium-authoring-guide/releases/tag/v0.3.1) has the earlier Emberwatch and Lantern Marsh examples. The guide targets SRD **5.2.1** and uses reading formats `dm-harness-publication` / `dm-harness-publication-book` **0.0.1**.
 
 Preserve the SRD-first workflow and run the checks above before contributing. See [parser provenance](lib/README.md) before changing validation semantics.
 
